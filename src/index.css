@@ -13,6 +13,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.thumbnailImg {
+  margin: 50px;
+  width: 80%;
+}
+
+.thumbnailWrapper {
+  display: flex;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
