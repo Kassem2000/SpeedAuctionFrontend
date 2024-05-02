@@ -68,15 +68,17 @@ button:focus-visible {
 }
 
 .left-logo {
-width: 70%;
+  cursor: pointer;
+  width: 70%;
 }
 
 .right-logo {
   width: 50%;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .links {
+  cursor: pointer;
   list-style: none;
   display: inline;
   margin-left: 800px;
@@ -87,6 +89,13 @@ width: 70%;
   margin-right: 20px;
 }
 
+.links a {
+  color: white; 
+}
+
+.links a:hover {
+  color: white; 
+}
 
 @media (prefers-color-scheme: light) {
   :root {
