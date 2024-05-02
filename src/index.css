@@ -3,7 +3,19 @@
   width: 400px;
   height: 230px;
   border-radius: 20px;
-  background-color: black;
+  background: url("public/imageThumbnail.jpg");
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.thumbnailCost {
+  font-size: 24px;
+  color: white;
+}
+
+.thumbnailRating {
+  color: white;
 }
 
 .thumbnailWrapper {
