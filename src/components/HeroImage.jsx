@@ -1,11 +1,5 @@
-
-
 const HeroImage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default HeroImage
+export default HeroImage;
