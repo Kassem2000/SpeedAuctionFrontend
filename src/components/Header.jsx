@@ -20,7 +20,9 @@ const Header = () => {
         </ul>
       </nav>
       <div className="Profile-log">
+      <a href="/profile">
       <img src="/Profile.png" alt="Profile" className="right-logo" />
+      </a>
       </div>
     </header>
   );
