@@ -54,6 +54,40 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.header {
+  background-color: #181616;
+  color: white;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.left-logo {
+width: 70%;
+}
+
+.right-logo {
+  width: 50%;
+  margin-right: 10px; 
+}
+
+.links {
+  list-style: none;
+  display: inline;
+  margin-left: 800px;
+}
+
+.links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
