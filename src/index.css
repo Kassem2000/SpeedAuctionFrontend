@@ -90,11 +90,11 @@ button:focus-visible {
 }
 
 .links a {
-  color: white; 
+  color: white;
 }
 
 .links a:hover {
-  color: white; 
+  color: white;
 }
 
 @media (prefers-color-scheme: light) {
