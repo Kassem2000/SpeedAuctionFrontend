@@ -1,5 +1,5 @@
 .thumbnailImg {
-  margin: 10px;
+  margin: 20px;
   width: 400px;
   height: 230px;
   border-radius: 20px;
@@ -7,15 +7,25 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  box-sizing: border-box;
 }
 
-.thumbnailCost {
+.thumbnailCost,
+.thumbnailRating {
   font-size: 24px;
   color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  width: fit-content;
 }
 
 .thumbnailRating {
-  color: white;
+  font-size: 48px;
+  color: #d9d9d9;
 }
 
 .thumbnailWrapper {
