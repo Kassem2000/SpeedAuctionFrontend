@@ -1,13 +1,17 @@
 import Thumbnail from "../components/Thumbnail";
+import HeroImage from "../components/HeroImage";
 
 const HomePage = () => {
   return (
-    <div className="thumbnailWrapper">
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-    </div>
+    <>
+      <HeroImage />
+      <div className="thumbnailWrapper">
+        <Thumbnail />
+        <Thumbnail />
+        <Thumbnail />
+        <Thumbnail />
+      </div>
+    </>
   );
 };
 
