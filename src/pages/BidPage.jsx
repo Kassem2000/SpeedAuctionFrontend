@@ -1,11 +1,5 @@
-
-
 const BidPage = () => {
-  return (
-    <div>
-      bid
-    </div>
-  )
-}
+  return <div>bid</div>;
+};
 
-export default BidPage
+export default BidPage;
