@@ -1,57 +1,36 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+.thumbnailImg {
+  margin: 20px;
+  width: 400px;
+  height: 230px;
+  border-radius: 20px;
+  background: url("imageThumbnail.jpg");
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.thumbnailCost,
+.thumbnailRating {
+  font-size: 24px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  width: fit-content;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.thumbnailRating {
+  font-size: 48px;
+  color: #d9d9d9;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.thumbnailWrapper {
+  display: flex;
+  margin-top: 60px;
 }
 
 .header {
@@ -91,10 +70,7 @@ button:focus-visible {
 
 .links a {
   color: white;
-}
-
-.links a:hover {
-  color: white;
+  text-decoration: none;
 }
 
 @media (prefers-color-scheme: light) {
