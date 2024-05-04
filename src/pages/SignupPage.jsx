@@ -11,16 +11,16 @@ const SignupPage = () => {
             <input type="text" name="Username" placeholder='Usename'/>
           </label>
           <label>
-            <input type="text" name="Firstname" placeholder='FirstName'/>
+            <input type="text" name="Firstname" placeholder='First Name'/>
           </label>
           <label>
-            <input type="text" name="lastname"placeholder='LastNAme' />
+            <input type="text" name="lastname"placeholder='Last Name' />
           </label>
           <label>
-            <input type='text' name="phone number" placeholder='Phone'/>
+            <input type='text' name="password" placeholder='Password'/>
           </label>
           <label>
-            
+
             <input type="text" name="email" placeholder='Email'/>
           </label>
           
@@ -37,7 +37,7 @@ const SignupPage = () => {
             <input type="text" name="City" placeholder='City'/>
           </label>
           <label>
-            <input type='text' name="postal code" placeholder='Postal Code'/>
+            <input type='text' name="phonenumber" placeholder='Phone Number '/>
           </label>
           <label>
             <input type='text' name="postal code" placeholder='Postal Code'/>
