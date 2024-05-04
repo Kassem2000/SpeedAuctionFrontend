@@ -71,15 +71,10 @@ button:focus-visible {
 
 /* SignupPage.css */
 .register-form {
-  background-color: none;
   width: 50pc;
   margin: 50px auto;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-  
-
 }
 
 form {
