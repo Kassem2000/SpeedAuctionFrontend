@@ -33,6 +33,11 @@
   margin-top: 60px;
 }
 
+.navWrapper {
+  display: flex;
+  margin-right: 20px;
+}
+
 .header {
   background-color: #181616;
   color: white;
@@ -60,7 +65,6 @@
   cursor: pointer;
   list-style: none;
   display: inline;
-  margin-left: 750px;
 }
 
 .links li {
@@ -98,10 +102,10 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  
 }
 
-input[type="text"], textarea {
+input[type="text"],
+textarea {
   width: 100%;
   background-color: #1a1a1a;
   padding: 10px;
@@ -114,13 +118,14 @@ input[type="text"], textarea {
   font-size: 14px;
   color: white;
 }
-input[type="text"]::placeholder, textarea::placeholder{
+input[type="text"]::placeholder,
+textarea::placeholder {
   font-size: 16px;
   color: white;
 }
 
 button {
-  grid-column: 1 / -1; 
+  grid-column: 1 / -1;
   background-color: black;
   color: white;
   font-weight: bold;

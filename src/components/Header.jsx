@@ -10,20 +10,22 @@ const Header = () => {
           />
         </a>
       </div>
-      <nav>
-        <ul className="links">
-          <a href="/login">
-            <li>Login</li>
+      <div className="navWrapper">
+        <nav>
+          <ul className="links">
+            <a href="/login">
+              <li>Login</li>
+            </a>
+            <a href="/signup">
+              <li>Sign up</li>
+            </a>
+          </ul>
+        </nav>
+        <div className="Profile-log">
+          <a href="/profile">
+            <img src="/Profile.png" alt="Profile" className="right-logo" />
           </a>
-          <a href="/signup">
-            <li>Sign up</li>
-          </a>
-        </ul>
-      </nav>
-      <div className="Profile-log">
-        <a href="/profile">
-          <img src="/Profile.png" alt="Profile" className="right-logo" />
-        </a>
+        </div>
       </div>
     </header>
   );
