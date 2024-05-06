@@ -81,6 +81,7 @@ body {
   text-decoration: none;
 }
 
+/*CreateAuctionPage*/
 .auctionPage {
   display: flex;
   flex-direction: column;
@@ -100,21 +101,21 @@ body {
 .rightBoxUpp {
   background-color: #181616;
   position: absolute;
-  width: 480px; 
-  height: 250px; 
+  width: 660px; 
+  height: 600px; 
   top: 100px;
-  right: 40px;
-  border-radius: 10px;
+  right: 60px;
+  border-radius: 15px;
 }
 
 .leftBoxUpp {
   background-color: #181616;
   position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
-  width: 1000px; /* Bredden på rutan */
-  height: 250px; /* Höjden på rutan */
+  width: 1150px; /* Bredden på rutan */
+  height: 600px; /* Höjden på rutan */
   top: 100px; /* Avstånd från överkanten */
   left: 20px; /* Avstånd från vänsterkanten */
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .lowerBoxes {
@@ -127,9 +128,9 @@ body {
 .rightBoxDown {
   background-color: #181616;
   position: absolute;
-  width: 650px;  
-  height: 200px;
-  top: 370px; 
+  width: 900px;  
+  height: 300px;
+  top: 720px; 
   right: 40px; 
   border-radius: 10px;
 }
@@ -139,10 +140,11 @@ body {
  position: absolute;
  width: 530px;
  height: 200px;
- top: 370px;
+ top: 770px;
  left: 20px;
  border-radius: 10px;
 }
+/*CreateAuctionPage*/
 
 
 @media (prefers-color-scheme: light) {
