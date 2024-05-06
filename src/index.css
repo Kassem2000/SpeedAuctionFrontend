@@ -82,7 +82,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; 
+  width: 100vw;
+  height: auto; 
   background-color: white;
 }
 
@@ -105,7 +106,7 @@
 .leftBoxUpp {
   background-color: #181616;
   position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
-  width: 700px; /* Bredden på rutan */
+  width: 1000px; /* Bredden på rutan */
   height: 250px; /* Höjden på rutan */
   top: 100px; /* Avstånd från överkanten */
   left: 20px; /* Avstånd från vänsterkanten */
@@ -122,7 +123,7 @@
 .rightBoxDown {
   background-color: #181616;
   position: absolute;
-  width: 650px;
+  width: 650px;  
   height: 200px;
   top: 370px; 
   right: 40px; 
