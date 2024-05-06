@@ -1,10 +1,17 @@
-
+import React, { useState } from 'react'
 
 const CreateAuctionPage = () => {
   return (
-    <div>
-      createAuction
-    </div>
+    <div className="auctionPage">
+      <div className="upperBoxes">
+        <div className='leftBoxUpp'></div>
+        <div className='rightBoxUpp'></div>
+      </div>
+      <div className="lowerBoxes">
+      <div className='leftBoxDown'></div>
+      <div className='rightBoxDown'></div>
+      </div>
+      </div>
   )
 }
 
