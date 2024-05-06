@@ -86,34 +86,58 @@
   background-color: white;
 }
 
-.upperBoxes, .lowerBoxes {
+.upperBoxes {
   display: flex;
   justify-content: center;
   margin-bottom: 20px; 
+  }
+
+.rightBoxUpp {
+  background-color: #181616;
+  position: absolute;
+  width: 480px; 
+  height: 250px; 
+  top: 100px;
+  right: 40px;
+  border-radius: 10px;
 }
 
-.rightBoxUpp, .leftBoxUpp {
-  width: 200px; 
-  height: 100px; 
-  margin: 0 10px; 
-  background-color: green;
+.leftBoxUpp {
+  background-color: #181616;
+  position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
+  width: 700px; /* Bredden på rutan */
+  height: 250px; /* Höjden på rutan */
+  top: 100px; /* Avstånd från överkanten */
+  left: 20px; /* Avstånd från vänsterkanten */
+  border-radius: 10px;
 }
 
-.lowerBox {
-  width: 200px;
-  height: 100px; 
-  margin: 0 10px; 
-}
-
-.leftBoxDown, .rightBoxDown {
-  width: 200px;
-  height: 100px;
-  margin: 0 10px;
-  background-color: green;
+.lowerBoxes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -350px; 
 }
 
 
+.rightBoxDown {
+  background-color: #181616;
+  position: absolute;
+  width: 650px;
+  height: 200px;
+  top: 370px; 
+  right: 40px; 
+  border-radius: 10px;
+}
 
+.leftBoxDown {
+ background-color: #181616;
+ position: absolute;
+ width: 530px;
+ height: 200px;
+ top: 370px;
+ left: 20px;
+ border-radius: 10px;
+}
 
 
 @media (prefers-color-scheme: light) {
