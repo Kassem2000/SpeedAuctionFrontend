@@ -131,16 +131,16 @@ body {
   width: 900px;  
   height: 300px;
   top: 720px; 
-  right: 40px; 
+  right: 60px; 
   border-radius: 10px;
 }
 
 .leftBoxDown {
  background-color: #181616;
  position: absolute;
- width: 530px;
- height: 200px;
- top: 770px;
+ width: 900px;
+ height: 300px;
+ top: 720px;
  left: 20px;
  border-radius: 10px;
 }
