@@ -106,7 +106,7 @@ body {
   width: 660px; 
   height: 600px; 
   top: 100px;
-  right: 60px;
+  right: 60px; /* Avstånd från högerkanten */
   border-radius: 15px;
 }
 

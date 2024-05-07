@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage";
 import BidPage from "./pages/BidPage";
 import Header from "./components/Header";
 
+
 function App() {
   return (
     <BrowserRouter>
