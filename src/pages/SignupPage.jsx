@@ -21,7 +21,6 @@ const SignupPage = () => {
             <input type='text' name="password" placeholder='Password'/>
           </label>
           <label>
-
             <input type="text" name="email" placeholder='Email'/>
           </label>
           
