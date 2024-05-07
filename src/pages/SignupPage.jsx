@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './pageCss/signupPage.css'
 
 
 const SignupPage = () => {
