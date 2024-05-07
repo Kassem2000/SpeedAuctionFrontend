@@ -1,16 +1,21 @@
 import Thumbnail from "../components/Thumbnail";
 import HeroImage from "../components/HeroImage";
+import { IoIosArrowDown } from "react-icons/io";
 
 const HomePage = () => {
   return (
     <>
       <div className="heroHome">
-        <div className="createAuctionButton">
+        <button className="createAuctionButton">
           <h3>Create Auction</h3>
-        </div>
+        </button>
         <div className="filterWrapper">
           <div className="filterBy">
-            <h3>Year</h3>
+            <div>
+              <h3>Year</h3>
+              <IoIosArrowDown />
+            </div>
+
             <h3>Model</h3>
             <h3>Brand</h3>
             <h3>Miles Driven</h3>

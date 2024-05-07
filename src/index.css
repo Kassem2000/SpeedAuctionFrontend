@@ -18,6 +18,11 @@ body {
   justify-content: space-between;
 }
 
+.heroHome button:hover {
+  background-color: gray;
+  transition: background-color 0.5s;
+}
+
 .createAuctionButton {
   width: 220px;
   height: 55px;
