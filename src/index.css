@@ -37,6 +37,7 @@ body {
   margin-top: 60px;
 }
 
+/*Header*/
 .navWrapper {
   display: flex;
   margin-right: 20px;
@@ -80,6 +81,7 @@ body {
   color: white;
   text-decoration: none;
 }
+/*Header*/
 
 /*CreateAuctionPage*/
 .auctionPage {
