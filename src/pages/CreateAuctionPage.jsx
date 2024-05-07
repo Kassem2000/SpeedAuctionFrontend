@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import InfoLabel from '../components/InfoLabel'
 import './pageCss/createAuctionPage.css'
 
 const CreateAuctionPage = () => {
@@ -10,34 +11,7 @@ const CreateAuctionPage = () => {
       </div>
       <div className="lowerBoxes">
       <div className='leftBoxDown'>
-       <div className='label-left'>
-        <label>
-          <div className='label1-1'></div>
-        </label>
-        <label>
-          <div className='label1-2'></div>
-        </label>
-        <label>
-          <div className='label1-3'></div>
-        </label>
-        <label>
-          <div className='label1-4'></div>
-        </label>
-       </div>
-       <div className='label-right'>
-       <label>
-          <div className='label2-1'></div>
-        </label>
-        <label>
-          <div className='label2-2'></div>
-        </label>
-        <label>
-          <div className='label2-3'></div>
-        </label>
-        <label>
-          <div className='label2-3'></div>
-        </label>
-       </div>
+       <InfoLabel />
       </div>
       <div className='rightBoxDown'></div>
       </div>

@@ -1,0 +1,39 @@
+.label-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  
+  .label1-1,
+  .label1-2,
+  .label1-3,
+  .label1-4 {
+    width: 400px;
+    height: 50px;
+    background-color: #161414; 
+    margin-bottom: 20px; /* Avstånd mellan rutorna */
+    border-radius: 10px;
+  }
+  
+  
+  .label-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+    margin-top: -320px;
+  }
+  
+  .label2-1,
+  .label2-2,
+  .label2-3,
+  .label2-4 {
+    width: 400px;
+    height: 50px;
+    background-color: #161414; 
+    margin-bottom: 20px; 
+    border-radius: 10px;
+  }
