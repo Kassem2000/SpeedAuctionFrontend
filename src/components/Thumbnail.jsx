@@ -1,3 +1,6 @@
+import './componentCss/thumbnail.css'
+
+
 const Thumbnail = () => {
   return (
     <div className="thumbnailImg">

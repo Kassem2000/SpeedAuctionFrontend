@@ -1,4 +1,8 @@
 import {Link} from "react-router-dom"
+import './componentCss/header.css'
+
+
+
 const Header = () => {
   return (
     <header className="header">
