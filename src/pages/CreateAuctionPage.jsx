@@ -9,7 +9,34 @@ const CreateAuctionPage = () => {
       </div>
       <div className="lowerBoxes">
       <div className='leftBoxDown'>
-        {/*Testa lägg två olika divar med labels*/}
+       <div className='label-left'>
+        <label>
+          <div className='label1-1'></div>
+        </label>
+        <label>
+          <div className='label1-2'></div>
+        </label>
+        <label>
+          <div className='label1-3'></div>
+        </label>
+        <label>
+          <div className='label1-4'></div>
+        </label>
+       </div>
+       <div className='label-right'>
+       <label>
+          <div className='label2-1'></div>
+        </label>
+        <label>
+          <div className='label2-2'></div>
+        </label>
+        <label>
+          <div className='label2-3'></div>
+        </label>
+        <label>
+          <div className='label2-3'></div>
+        </label>
+       </div>
       </div>
       <div className='rightBoxDown'></div>
       </div>
