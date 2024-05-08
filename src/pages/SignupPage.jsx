@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './pageCss/signupPage.css'
 
 
 const SignupPage = () => {
@@ -20,7 +21,6 @@ const SignupPage = () => {
             <input type='text' name="password" placeholder='Password'/>
           </label>
           <label>
-
             <input type="text" name="email" placeholder='Email'/>
           </label>
           

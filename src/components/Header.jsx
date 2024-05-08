@@ -1,30 +1,35 @@
+import {Link} from "react-router-dom"
+import './componentCss/header.css'
+
+
+
 const Header = () => {
   return (
     <header className="header">
       <div className="SpeedAuction-logo">
-        <a href="/">
+        <Link to="/">
           <img
             src="/SpeedAuction.png"
             alt="SpeedAuction"
             className="left-logo"
           />
-        </a>
+        </Link>
       </div>
       <div className="navWrapper">
         <nav>
           <ul className="links">
-            <a href="/login">
+            <Link to="/login">
               <li>Login</li>
-            </a>
-            <a href="/signup">
+            </Link>
+            <Link to="/signup">
               <li>Sign up</li>
-            </a>
+            </Link>
           </ul>
         </nav>
         <div className="Profile-log">
-          <a href="/profile">
+          <Link to="/profile">
             <img src="/Profile.png" alt="Profile" className="right-logo" />
-          </a>
+          </Link>
         </div>
       </div>
     </header>
