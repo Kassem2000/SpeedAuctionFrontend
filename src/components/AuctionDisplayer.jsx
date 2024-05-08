@@ -1,4 +1,5 @@
 import Thumbnail from "./Thumbnail";
+import "./componentCss/auctionDisplayer.css";
 
 const AuctionDisplayer = () => {
   return (

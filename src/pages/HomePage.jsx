@@ -2,6 +2,7 @@ import Thumbnail from "../components/Thumbnail";
 import HeroImage from "../components/HeroImage";
 import Filter from "../components/Filter";
 import AuctionDisplayer from "../components/AuctionDisplayer";
+import "./pageCss/homePage.css";
 
 const HomePage = () => {
   return (
