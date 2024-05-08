@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import './pageCss/signupPage.css'
-
+import React, { useState } from "react";
+import "./pageCss/signupPage.css";
 
 const SignupPage = () => {
   return (
@@ -9,45 +8,42 @@ const SignupPage = () => {
         <h1>Sign up</h1>
         <div className="input-group">
           <label>
-            <input type="text" name="Username" placeholder='Usename'/>
+            <input type="text" name="Username" placeholder="Usename" />
           </label>
           <label>
-            <input type="text" name="Firstname" placeholder='First Name'/>
+            <input type="text" name="Firstname" placeholder="First Name" />
           </label>
           <label>
-            <input type="text" name="lastname"placeholder='Last Name' />
+            <input type="text" name="lastname" placeholder="Last Name" />
           </label>
           <label>
-            <input type='text' name="password" placeholder='Password'/>
+            <input type="text" name="password" placeholder="Password" />
           </label>
           <label>
-            <input type="text" name="email" placeholder='Email'/>
+            <input type="text" name="email" placeholder="Email" />
           </label>
-          
         </div>
         <div className="input-group">
-        <label>
-            <input type="text" name="Adress" placeholder='Address'/>
+          <label>
+            <input type="text" name="Adress" placeholder="Address" />
           </label>
           <label>
-            <input type="text" name="Country" placeholder='Country'/>
+            <input type="text" name="Country" placeholder="Country" />
           </label>
           <label>
-            
-            <input type="text" name="City" placeholder='City'/>
+            <input type="text" name="City" placeholder="City" />
           </label>
           <label>
-            <input type='text' name="phonenumber" placeholder='Phone Number '/>
+            <input type="text" name="phonenumber" placeholder="Phone Number " />
           </label>
           <label>
-            <input type='text' name="postal code" placeholder='Postal Code'/>
+            <input type="text" name="postal code" placeholder="Postal Code" />
           </label>
         </div>
         <button type="submit">Confirm</button>
       </form>
     </div>
-  
-  )
-}
+  );
+};
 
-export default SignupPage
+export default SignupPage;
