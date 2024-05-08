@@ -1,3 +1,5 @@
+
+
 const HeroImage = () => {
   return (
     <div>
