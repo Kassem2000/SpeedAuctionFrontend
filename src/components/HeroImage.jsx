@@ -1,8 +1,9 @@
-
+import React from "react";
+import './componentCss/heroImage.css';
 
 const HeroImage = () => {
   return (
-    <div>
+    <div className="heroImage">
       <img src="public/imgHero.png" alt="" />
     </div>
   );
