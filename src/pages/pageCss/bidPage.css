@@ -1,0 +1,61 @@
+.auctionPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  background-color: white;
+}
+
+.upperBoxes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.rightBoxUpp {
+  background-color: #181616;
+  position: absolute;
+  width: 660px;
+  height: 600px;
+  top: 100px;
+  right: 60px; /* Avstånd från högerkanten */
+  border-radius: 15px;
+}
+
+.leftBoxUpp {
+  background-color: #181616;
+  position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
+  width: 1150px; /* Bredden på rutan */
+  height: 600px; /* Höjden på rutan */
+  top: 100px; /* Avstånd från överkanten */
+  left: 20px; /* Avstånd från vänsterkanten */
+  border-radius: 15px;
+}
+
+.lowerBoxes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -350px;
+}
+
+.rightBoxDown {
+  background-color: #181616;
+  position: absolute;
+  width: 900px;
+  height: 300px;
+  top: 720px;
+  right: 60px;
+  border-radius: 10px;
+}
+
+.leftBoxDown {
+  background-color: white;
+  position: absolute;
+  width: 900px;
+  height: 300px;
+  top: 720px;
+  left: 20px;
+  border-radius: 10px;
+}
