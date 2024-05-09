@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(public/imgHero.png);
+}
+
+.Login {
+    width: 28pc;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 32%;
+    margin-left: 80%;
+    background-color:transparent;
+  }
+  
+  .Login h1 {
+    font-size: 36px;
+    height: -40%;
+    text-align: center;
+    color: #181616;
+    background: transparent;
+  }
+  
+  .Login .input-box {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    border: none;
+    outline: none;
+    margin: 0px 0px;
+    border-radius: 10px;
+    background: transparent;
+    
+  }
+ 
+  .input-box input {
+    width: 100%;
+    height: 0%;
+    background:#181616;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size:20px;
+    padding: 30px 45px 20px 20px;
+  }
+  
+  .input-box input::placeholder {
+    color: #ffffff;
+  }
+  
+  .input-box .icon {
+    color: #ffffff;
+    position: relative;
+    left: 92%;
+    transform: translateY(-170%);
+    font-size: 20px;
+    background: transparent;
+  }
+  
+  .Login .remember-forgot {
+    display: flex;
+    position:relative;
+    justify-content: space-between;
+    width: 95%;
+    margin-left: 2%;
+    margin-top: -9%;
+    font-size: 20px;
+    background: transparent;
+    color: #ffffff;
+
+  }
+  
+  
+  .remember-forgot label-input {
+    accent-color: #ffff;
+    margin-right: 5px;
+    background: transparent;
+  }
+  
+  .remember-forgot a {
+    color:#ffffff;
+    text-decoration: none;
+    font-family: oswald;
+    background: transparent; 
+  }
+  
+  .remember-forgot a:hover {
+   text-decoration: underline;
+   background: transparent; 
+   
+  }
+  
+  .Login button {
+    width: 40%;
+    height: 45px;
+    background: #1a1a1a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: oswald;
+    margin-left: 30%;
+    margin-top: 5%;
+  }
+  
