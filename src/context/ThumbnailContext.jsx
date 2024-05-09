@@ -12,9 +12,12 @@ const ThumbnailProvider = ({ children }) => {
     const fetchThumbnails = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/auctions/filterByIsActive/true`
+          `${
+            import.meta.env.VITE_API_URL
+          }/auctions/filterByStartingPriceBetween/50000/100000000`
         );
-        setThumbnail(res.data);
+        const reversedOrder = res.data.reverse();
+        setThumbnail(reversedOrder);
       } catch (err) {
         console.log("error: " + err);
       }
