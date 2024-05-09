@@ -137,7 +137,6 @@ const SignupPage = () => {
             />
           ))}
         </div>
-
         <button className="submit-btn">submit</button>
       </form>
     </div>

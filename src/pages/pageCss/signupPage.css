@@ -67,19 +67,21 @@ input:invalid[focused="true"] {
 }
 
 .submit-btn {
- 
+
   display: block;
-    width: 100%;
-    background-color: #1a1a1a;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: rgb(22, 20, 20);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    gap: 20px;
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: rgb(22, 20, 20);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  gap: 20px;
+
+    
 }
 .submit-btn:hover {
   background-color: rgba(22, 20, 20, 0.819);
