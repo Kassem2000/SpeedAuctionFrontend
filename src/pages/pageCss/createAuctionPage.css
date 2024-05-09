@@ -1,0 +1,60 @@
+.auctioninput {
+  width: 269px;
+  height: 65px;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+.auctioninput input[type="text"] {
+  text-align: center;
+  border: none;
+  font-weight: bold;
+}
+.createModel {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  opacity: 80%;
+}
+
+.Fields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.Fields input::placeholder {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  color: #fffbfb;
+}
+.Fields label {
+  margin-bottom: -20px;
+}
+
+.Fields input {
+  box-sizing: border-box;
+  width: 457px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #161414;
+  border: none;
+  font-size: 24px;
+}
+.Fields input[name="Description"] {
+  height: 172px;
+}
+.Confirmed {
+  background-color: #161414;
+  color: #ffff;
+  position: absolute;
+  align-items: center;
+  font-family: "Roboto";
+  font-size: 24px;
+  width: 136px;
+  height: 55px;
+  bottom: 60px;
+  right: 300px;
+  opacity: 80%;
+}
