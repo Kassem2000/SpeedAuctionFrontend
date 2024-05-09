@@ -1,53 +1,100 @@
-.register-form {
-    width: 50pc;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-  }
-  
-  input[type="text"],
-  textarea {
+
+input {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 10px 20px;
+  width: 20pc;
+  background-color: rgb(22, 20, 20);
+  border: none;
+  border-radius: 6px;
+  height: 25px;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+  position: absolute;
+ 
+}
+
+input:invalid[focused="true"]~span {
+  display: block;
+}
+
+input:invalid[focused="true"] {
+  border-radius: 6px red;
+  border: 1px solid red;
+}
+
+
+.signuppage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color:rgba(211, 211, 211, 0.334) ;
+  padding: 20px;
+
+}
+
+.signup-form {
+ background:transparent;
+ padding: 20px;
+ border-radius: 8px;
+ position: relative;
+ 
+ 
+}
+
+.input-grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+  position: relative;
+
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 44px;;
+}
+
+.submit-btn {
+ 
+  display: block;
     width: 100%;
     background-color: #1a1a1a;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-top: 50px;
-    height: 3pc;
-    font-weight: bold;
-    font-size: 14px;
+    margin-top: 20px;
+    background-color: rgb(22, 20, 20);
     color: white;
-  }
-  input[type="text"]::placeholder,
-  textarea::placeholder {
-    font-size: 16px;
-    color: white;
-  }
-  
-  button {
-    grid-column: 1 / -1;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    gap: 20px;
+}
+.submit-btn:hover {
+  background-color: rgba(22, 20, 20, 0.819);
+}
+
+label {
+  margin-left: 2pc;
+  font-size: 20px;
+  font-weight: normal;
+  color:white;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .input-grid {
+    grid-template-columns: 1fr;
   }
-  
-  button:hover {
-    background-color: #92929242;
-  }
-  
-  h1 {
-    grid-column: 1 / -1;
-    text-align: center;
-  }
+}
