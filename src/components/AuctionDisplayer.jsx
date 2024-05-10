@@ -10,8 +10,6 @@ const AuctionDisplayer = () => {
     return <p className="placeHolderNoAuctions">No Auctions Available!</p>;
   }
 
-  console.log(thumbnail.id);
-
   return (
     <div className="thumbnailWrapper">
       {thumbnail.map((thumbnail) => (

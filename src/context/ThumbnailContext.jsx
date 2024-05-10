@@ -11,13 +11,24 @@ const ThumbnailProvider = ({ children }) => {
   useEffect(() => {
     const fetchThumbnails = async () => {
       try {
-        const res = await axios.get(
+        const resIsActive = await axios.get(
+          `${import.meta.env.VITE_API_URL}/auctions/filterByIsActive/true`
+        );
+        const resStartingPrice = await axios.get(
           `${
             import.meta.env.VITE_API_URL
           }/auctions/filterByStartingPriceBetween/50000/100000000`
         );
-        const reversedOrder = res.data.reverse();
-        setThumbnail(reversedOrder);
+        const reversedOrder = resStartingPrice.data.reverse();
+        const activeAuctions = resIsActive.data;
+        const filtersCombined = reversedOrder.filter(
+          (startingPriceRangeAuction) => {
+            return activeAuctions.some((activeAuction) => {
+              return activeAuction.active === startingPriceRangeAuction.active;
+            });
+          }
+        );
+        setThumbnail(filtersCombined);
       } catch (err) {
         console.log("error: " + err);
       }
