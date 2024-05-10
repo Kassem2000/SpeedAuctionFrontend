@@ -1,5 +1,6 @@
 .heroImage {
-  position: fixed;
-  z-index: -1;
-  filter: blur(10px);
+  background: url(heroimg.png);
+  height: 100vh;
+  background-size: cover;
+  padding-top: 1px;
 }

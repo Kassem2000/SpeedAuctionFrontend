@@ -17,6 +17,12 @@
   background-color: gray;
   transition: background-color 0.5s;
 }
+
+.linkCreateAuction {
+  align-self: end;
+  text-decoration: none;
+}
+
 .createAuctionButton {
   width: 220px;
   height: 55px;

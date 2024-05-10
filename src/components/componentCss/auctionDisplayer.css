@@ -3,3 +3,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.placeHolderNoAuctions {
+  margin: 20px;
+  font-size: 30px;
+  color: white;
+}

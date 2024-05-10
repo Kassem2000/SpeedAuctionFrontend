@@ -42,20 +42,20 @@
 .Fields input {
   box-sizing: border-box;
   width: 457px;
-  height: 70px;
+  height: 60px;
   border-radius: 10px;
   background-color: #161414;
   border: none;
   font-size: 24px;
 }
 .Fields input[name="Description"] {
-  height: 172px;
+  height: 150px;
 }
 .Confirmed {
   background-color: #161414;
   color: #ffff;
   font-family: "Roboto";
-  margin: 50px;
+  margin: 40px;
   font-size: 24px;
   width: 136px;
   height: 55px;
