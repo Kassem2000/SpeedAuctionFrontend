@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 
 const LoginPage = () => {
   return (
-    <form action="">
+    <form className='login-form'>
       <div className="Login">
         <h1>Login</h1>
         <div className="input-box">

@@ -12,8 +12,9 @@ const Signupform = (props) => {
 
   return (
     <div className="FormInput">
-      <label>{label}</label>
+      <label className="signup-label">{label}</label>
       <input
+        className="signup-input"
         {...inputProps}
         onChange={onChange}
         onBlur={handleFocus}
@@ -22,7 +23,7 @@ const Signupform = (props) => {
         }
         focused={focused.toString()}
       />
-      <span>{errorMessage}</span>
+      <span className="signup-span">{errorMessage}</span>
     </div>
   );
 };

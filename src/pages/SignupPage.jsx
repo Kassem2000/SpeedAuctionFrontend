@@ -124,10 +124,10 @@ const SignupPage = () => {
   console.log(values);
 
   return (
-    <div className="signuppage">
+    <div className="signup-page">
       <form className="signup-form" onSubmit={handleSubmit}>
-        <h1 className="form-title">Register</h1>
-        <div className="input-grid">
+        <h1 className="signup-form-title">Sign Up</h1>
+        <div className="signup-input-grid">
           {inputs.map((input) => (
             <Signupform
               key={input.id}
@@ -137,7 +137,7 @@ const SignupPage = () => {
             />
           ))}
         </div>
-        <button className="submit-btn">submit</button>
+        <button className="signup-submit-btn">Sign Up</button>
       </form>
     </div>
   );

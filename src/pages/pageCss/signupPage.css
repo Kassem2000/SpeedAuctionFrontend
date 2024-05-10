@@ -1,102 +1,94 @@
 
-input {
+.signup-input {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 15px;
-  margin: 10px 20px;
+  margin: 10px 15px;
   width: 20pc;
-  background-color: rgb(22, 20, 20);
+  background-color: rgba(22, 20, 20, 0.776);
   border: none;
   border-radius: 6px;
-  height: 25px;
-  color: white;
+  color: rgba(255, 255, 255, 0.333);
   font-size: 14px;
   margin-bottom: 10px;
+ 
 }
 
-span {
+/* change position to relativ or absolut */
+.signup-span {
   font-size: 12px;
   padding: 3px;
   color: red;
   display: none;
-  position: absolute;
- 
+  position: relative;
+
 }
 
-input:invalid[focused="true"]~span {
+.signup-input:invalid[focused="true"]~span {
   display: block;
 }
 
-input:invalid[focused="true"] {
+.signup-input:invalid[focused="true"] {
   border-radius: 6px red;
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
-
-.signuppage {
+.signup-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color:rgba(211, 211, 211, 0.334) ;
-  padding: 20px;
+  min-height: 120vh;
 
+}
+.signup-input-grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
 }
 
 .signup-form {
  background:transparent;
  padding: 20px;
  border-radius: 8px;
- position: relative;
- 
+ position: absolute;
  
 }
 
-.input-grid{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 20px;
-  position: relative;
 
-}
-
-.form-title {
+.signup-form-title {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 44px;;
+  margin-bottom: 50px;
+  font-size: 44px;
+  color: black;
 }
 
-.submit-btn {
-
-  display: block;
+.signup-submit-btn {
+  font-weight: bold;
   width: 100%;
-  background-color: #1a1a1a;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 15px;
+  margin-top: 60px;
   background-color: rgb(22, 20, 20);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  gap: 20px;
-
-    
-}
-.submit-btn:hover {
-  background-color: rgba(22, 20, 20, 0.819);
-}
-
-label {
-  margin-left: 2pc;
   font-size: 20px;
-  font-weight: normal;
+}
+.signup-submit-btn:hover {
+  background-color: rgba(22, 20, 20, 0.59);
+}
+
+.signup-label {
+  margin-left: 2pc;
+  font-size: 22px;
+  font-weight:bold;
   color:white;
 }
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
-  .input-grid {
+  .signup-input-grid {
     grid-template-columns: 1fr;
   }
 }
