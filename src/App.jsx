@@ -6,12 +6,14 @@ import CreateAuctionPage from "./pages/CreateAuctionPage";
 import ProfilePage from "./pages/ProfilePage";
 import BidPage from "./pages/BidPage";
 import Header from "./components/Header";
+import HeroImage from "./components/HeroImage";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
+      <HeroImage/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/bid" element={<BidPage />} />
