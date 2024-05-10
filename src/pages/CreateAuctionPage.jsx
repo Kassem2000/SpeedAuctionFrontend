@@ -4,13 +4,7 @@ import "./pageCss/createAuctionPage.css";
 const CreateAuctionPage = () => {
   return (
     <div className="createModel">
-      <div className="auctioninput">
-        <input
-          type="text"
-          name="Create Your Auction"
-          placeholder="Create Your Auction"
-        />
-      </div>
+      <div className="auctioninput"> Create your auction</div>
       <form>
         <div className="Fields">
           <label>
