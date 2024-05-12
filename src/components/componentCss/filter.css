@@ -15,16 +15,25 @@
   width: 60%;
 }
 
-.filterBy h3 {
-  margin: 10px;
-}
-
 .filterLabel {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
+.filterLabel:hover {
+  scale: 1.05;
+}
+
+.filterLabel h3 {
+  margin: 10px;
+}
+
 .filterButton h3 {
-  margin-right: 40px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.filterButton h3:hover {
+  scale: 1.05;
 }

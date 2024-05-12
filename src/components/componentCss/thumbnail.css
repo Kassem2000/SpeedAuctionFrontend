@@ -1,5 +1,16 @@
-.thumbnailImg {
+.linkAuction {
   margin: 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  display: flex;
+  flex-grow: 1;
+}
+
+.linkAuction:hover {
+  scale: 1.01;
+}
+
+.thumbnailImg {
   width: 400px;
   height: 230px;
   border-radius: 20px;
@@ -28,6 +39,10 @@
 .thumbnailRating {
   font-size: 48px;
   color: #d9d9d9;
+}
+
+.yellowStar {
+  color: gold;
 }
 
 .thumbnailWrapper {

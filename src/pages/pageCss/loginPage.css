@@ -21,12 +21,8 @@
   color: #181616;
   
 }
-/*added */
-.login-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-}
+
+
 
 .Login .input-box {
   position: relative;
