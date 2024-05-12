@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Signupform from "../components/Signupform";
+import { AuthContext } from "../context/AuthContext";
+import axios from "axios";
 
 const SignupPage = () => {
+
+  const{dispatch} = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
   //values objects
   const [values, setValues] = useState({
     username: "",
-    name: "",
-    lastname: "",
-    phonenumber: "",
+    first_name: "",
+    last_name: "",
+    phone_number: "",
     email: "",
-    adress: "",
+    address: "",
     city: "",
-    postalcode: "",
+    postal_code: "",
     password: "",
-    comfirmpassword: "",
+    comfirmpassword: ""
+
   });
   //inputs
   const inputs = [
@@ -30,7 +39,7 @@ const SignupPage = () => {
     },
     {
       id: 2,
-      name: "name",
+      name: "first_name",
       type: "text",
       placeholder: "name",
       errorMessage: "cannot be emty",
@@ -39,7 +48,7 @@ const SignupPage = () => {
     },
     {
       id: 3,
-      name: "lastname",
+      name: "last_name",
       type: "text",
       placeholder: "Lastname",
       errorMessage: "cannot be emty",
@@ -48,7 +57,7 @@ const SignupPage = () => {
     },
     {
       id: 4,
-      name: "Phonenumber",
+      name: "Phone_number",
       type: "text",
       placeholder: "Phone number",
       errorMessage: "cannot be emty",
@@ -66,7 +75,7 @@ const SignupPage = () => {
     },
     {
       id: 6,
-      name: "adress",
+      name: "address",
       type: "text",
       placeholder: "Adress",
       errorMessage: "cannot be emty",
@@ -84,7 +93,7 @@ const SignupPage = () => {
     },
     {
       id: 8,
-      name: "podtalcode",
+      name: "postal_code",
       type: "text",
       placeholder: "Postal Code",
       errorMessage: "cannot be emty",
@@ -114,14 +123,48 @@ const SignupPage = () => {
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // if you dont write this once click on submit  the page will only reload.... viktigt
+
+    // Check if passwords match
+    if (values.password !== values.comfirmpassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    const{comfirmpassword, ...userData }= values; //ecludde comfirmpassword
+
+
+    try{
+      const response = await axios.post
+       (`${import.meta.env.VITE_API_URL}/auth/signup`,
+       {
+        userData,
+       },
+       {withCredentials: true}
+      
+       );
+
+      if(response.status ===200){
+        dispatch ({type: "SIGNUP", payload: response.data});
+        navigate("/")
+      }else{
+        alert(errorData || "REGISTRATION FAILED");
+      }
+   
+    } catch(error){
+      console.error("ERROR:", error);
+      alert("Registration Failled");
+    }
   };
+
+
+
+
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  console.log(values);
 
   return (
     <div className="signup-page">
@@ -137,7 +180,7 @@ const SignupPage = () => {
             />
           ))}
         </div>
-        <button className="signup-submit-btn">Sign Up</button>
+        <button className="signup-submit-btn" type="submit">Sign Up</button>
       </form>
     </div>
   );
