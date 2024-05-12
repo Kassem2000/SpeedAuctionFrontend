@@ -1,13 +1,15 @@
 import React from "react";
 import "./componentCss/infoLabel.css";
 import { AuctionContext } from "../context/AuctionContext";
+import { useContext } from "react";
 
 const InfoLabel = () => {
+  const { auctionTypeCar } = useContext(AuctionContext);
   return (
     <>
       <div className="label-left">
         <label>
-          <div className="label1-1">{}</div>
+          <div className="label1-1">Model: {auctionTypeCar.carModel}</div>
         </label>
         <label>
           <div className="label1-2"></div>

@@ -1,5 +1,4 @@
 import { useEffect, createContext, useState } from "react";
-
 import axios from "axios";
 
 // create context
@@ -7,25 +6,28 @@ const AuctionContext = createContext();
 
 // create provider
 const AuctionProvider = ({ children }) => {
-  const [auction, setAuction] = useState([]);
+  const [auctionTypeCar, setAuction] = useState([]);
 
   useEffect(() => {
-    const fetchAuction = async () => {
+    const fetchAuctions = async () => {
       try {
-        const resAuction = await axios.get(
-          `${import.meta.env.VITE_API_URL}/auctions/all`
+        const resAuctions = await axios.get(
+          `${
+            import.meta.env.VITE_API_URL
+          }/auctionTypeCar/65f37679f81ccd579ef2767e`
         );
 
-        setAuction(filtersCombined);
+        setAuction(resAuctions.data);
+        console.log("auction data: " + resAuctions.data.startingPrice);
       } catch (err) {
         console.log("error: " + err);
       }
     };
-    fetchAuction();
+    fetchAuctions();
   }, []);
 
   return (
-    <AuctionContext.Provider value={{ auction, setAuction }}>
+    <AuctionContext.Provider value={{ auctionTypeCar, setAuction }}>
       {children}
     </AuctionContext.Provider>
   );
