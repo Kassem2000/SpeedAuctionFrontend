@@ -1,0 +1,59 @@
+.pageContainer {
+  display: grid;
+  grid-column: 500px 1fr;
+  grid-template-areas: "leftside rightside";
+}
+
+.leftsideProfile {
+  grid-area: leftside;
+  width: 500px;
+  margin-top: 56px;
+  overflow-y: scroll;
+  height: 93vh;
+  border-radius: 10px;
+  background-color: #1e1b1b;
+}
+
+.rightsideProfile {
+  grid-area: rightside;
+  display: flex;
+  align-items: center;
+}
+
+.profilePictureWrapper {
+  margin: 20px;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  left: 500px;
+}
+
+.profilePic {
+  background: url("profilePic.jpg");
+  width: 256px;
+  height: 256px;
+  background-position: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.picInfo {
+  margin: 10px;
+  margin-top: 80px;
+  border: #1e1b1b;
+}
+
+.ratingProfile {
+  font-size: 24px;
+  color: gold;
+}
+
+.buttonProfile {
+  margin: 10px;
+  max-width: 180px;
+}
+
+.formContainerProfile {
+  max-width: 600px;
+}
