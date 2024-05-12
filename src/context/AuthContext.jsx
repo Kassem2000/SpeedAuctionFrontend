@@ -1,10 +1,9 @@
 import { useEffect,useReducer, createContext, Children } from "react";
-import { json } from "react-router-dom";
 
 //global initial state
 const initialState ={
     user: null,
-}
+};
 
 //define reducer
 const rootReducer = (state, action) =>{

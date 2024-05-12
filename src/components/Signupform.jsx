@@ -19,7 +19,7 @@ const Signupform = (props) => {
         onChange={onChange}
         onBlur={handleFocus}
         onFocus={() =>
-          inputProps.name === "comfirmpassword" && setFocused(true)
+          inputProps.name === "confirmpassword" && setFocused(true)
         }
         focused={focused.toString()}
       />

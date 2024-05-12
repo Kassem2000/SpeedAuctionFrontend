@@ -4,6 +4,7 @@ import Signupform from "../components/Signupform";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 
+
 const SignupPage = () => {
 
   const{dispatch} = useContext(AuthContext);
@@ -19,9 +20,10 @@ const SignupPage = () => {
     email: "",
     address: "",
     city: "",
+    country:"",
     postal_code: "",
     password: "",
-    comfirmpassword: ""
+    confirmpassword: ""
 
   });
   //inputs
@@ -57,7 +59,7 @@ const SignupPage = () => {
     },
     {
       id: 4,
-      name: "Phone_number",
+      name: "phone_number",
       type: "text",
       placeholder: "Phone number",
       errorMessage: "cannot be emty",
@@ -92,6 +94,15 @@ const SignupPage = () => {
       required: true,
     },
     {
+      id: 11,
+      name: "country",
+      type: "text",
+      placeholder: "Country",
+      errorMessage: "Country cannot be empty",
+      label: "Country",
+      required: true,
+    },
+    {
       id: 8,
       name: "postal_code",
       type: "text",
@@ -113,11 +124,11 @@ const SignupPage = () => {
     },
     {
       id: 10,
-      name: "comfirmpassword",
+      name: "confirmpassword",
       type: "Password",
-      placeholder: "Comfirm Password",
+      placeholder: "Confirm Password",
       errorMessage: "PassWord Don't match!",
-      label: "comfirm Password",
+      label: "confirm Password",
       pattern: values.password,
       required: true,
     },
@@ -127,33 +138,37 @@ const SignupPage = () => {
     e.preventDefault(); // if you dont write this once click on submit  the page will only reload.... viktigt
 
     // Check if passwords match
-    if (values.password !== values.comfirmpassword) {
+    if (values.password !== values.confirmpassword) {
       alert("Passwords do not match");
       return;
     }
 
-    const{comfirmpassword, ...userData }= values; //ecludde comfirmpassword
-
+    const{confirmpassword, ...userData }= values; //exclude comfirmpassword
 
     try{
-      const response = await axios.post
-       (`${import.meta.env.VITE_API_URL}/auth/signup`,
-       {
-        userData,
-       },
-       {withCredentials: true}
-      
-       );
+      const { data } = await axios.post(
+        "http://localhost:8080/api/auth/signup",
 
-      if(response.status ===200){
-        dispatch ({type: "SIGNUP", payload: response.data});
-        navigate("/")
-      }else{
-        alert(errorData || "REGISTRATION FAILED");
-      }
-   
-    } catch(error){
-      console.error("ERROR:", error);
+        userData, //directly send data not as property
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+
+       dispatch({
+         type: "SIGNUP",
+         payload: data,
+       });
+       window.localStorage.setItem("user", JSON.stringify(data));
+       console.log("Succesfull")
+
+       return navigate("/");
+
+    } catch(err){
+      console.error("ERROR:" + err);
       alert("Registration Failled");
     }
   };
