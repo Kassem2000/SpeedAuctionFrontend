@@ -4,6 +4,7 @@ import InfoLabel from "../components/InfoLabel";
 import "./pageCss/bidPage.css";
 import HeroImage from "../components/HeroImage";
 import Description from "../components/Description";
+import PictureBox from "../components/PictureBox";
 
 const BidPage = ({}) => {
   return (
@@ -12,7 +13,7 @@ const BidPage = ({}) => {
         <HeroImage>
           <div className="auctionPage">
             <div className="upperBoxes">
-              <div className="leftBoxUpp"></div>
+              <PictureBox />
               <div className="rightBoxUpp"></div>
             </div>
             <div className="lowerBoxes">
@@ -20,7 +21,8 @@ const BidPage = ({}) => {
                 <InfoLabel />
               </div>
               <div className="rightBoxDown">
-                Description:
+                <h2 className="description-title">Description:</h2>
+
                 <Description />
               </div>
             </div>

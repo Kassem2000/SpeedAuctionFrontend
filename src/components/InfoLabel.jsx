@@ -9,30 +9,30 @@ const InfoLabel = () => {
     <>
       <div className="label-left">
         <label>
-          <div className="label1-1">Model: {auctionTypeCar.carModel}</div>
+          <h2 className="label1-1">Model: {auctionTypeCar.carModel}</h2>
         </label>
         <label>
-          <div className="label1-2">Brand: {auctionTypeCar.brand}</div>
+          <h2 className="label1-2">Brand: {auctionTypeCar.brand}</h2>
         </label>
         <label>
-          <div className="label1-3">Year Manufactured: {auctionTypeCar.yearManufactured}</div>
+          <h2 className="label1-3">Year Manufactured: {auctionTypeCar.yearManufactured}</h2>
         </label>
         <label>
-          <div className="label1-4">Miles Driven: {auctionTypeCar.milesDriven}</div>
+          <h2 className="label1-4">Miles Driven: {auctionTypeCar.milesDriven}</h2>
         </label>
       </div>
       <div className="label-right">
         <label>
-          <div className="label2-1">Color: {auctionTypeCar.color}</div>
+          <h2 className="label2-1">Color: {auctionTypeCar.color}</h2>
         </label>
         <label>
-          <div className="label2-2">Plate Number: {auctionTypeCar.regNumber}</div>
+          <h2 className="label2-2">Plate Number: {auctionTypeCar.regNumber}</h2>
         </label>
         <label>
-          <div className="label2-3">Condition: {auctionTypeCar.condition}</div>
+          <h2 className="label2-3">Condition: {auctionTypeCar.condition}</h2>
         </label>
         <label>
-          <div className="label2-3">Bids: </div>
+          <h2 className="label2-3">Bids: </h2>
         </label>
       </div>
     </>

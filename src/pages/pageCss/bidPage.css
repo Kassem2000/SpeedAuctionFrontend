@@ -41,7 +41,8 @@
 }
 
 .rightBoxDown {
-  background-color: white;
+  background-color: #181616;
+  
   position: absolute;
   width: 900px;
   height: 300px;
@@ -50,8 +51,15 @@
   border-radius: 10px;
 }
 
+.description-title {
+
+  color: white;
+  font-size: 30px;
+  margin-left: 350px;
+  margin-top: 10px;
+}
+
 .leftBoxDown {
-  background-color: white;
   position: absolute;
   width: 900px;
   height: 300px;

@@ -1,11 +1,11 @@
 .description {
-    background-color: #181616;
+    background-color: black;
     color: white;
     position: absolute;
     justify-content: center;
     width: 830px;
-    height: 250px;
+    height: 200px;
     right: 30px;
-    top: 40px;
+    top: 60px;
   }
   

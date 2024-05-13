@@ -14,7 +14,7 @@ const AuctionProvider = ({ children }) => {
         const resAuctions = await axios.get(
           `${
             import.meta.env.VITE_API_URL
-          }/auctionTypeCar/65f37679f81ccd579ef2767e`
+          }/auctionTypeCar/65f37679f81ccd579ef2767e` 
         );
 
         setAuction(resAuctions.data);

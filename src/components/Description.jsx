@@ -7,7 +7,9 @@ const Description = () => {
     const { auctionTypeCar } = useContext(AuctionContext);
   return (
     <>
-    <div className="description">{auctionTypeCar.description}</div>
+    <div className="description">
+        <h2 className="textDescription">{auctionTypeCar.description}</h2>
+    </div>
     </>
   )
   
