@@ -1,11 +1,11 @@
-import { useContext } from "react";
 import { AuctionProvider } from "../context/AuctionContext";
-import { AuctionContext } from "../context/AuctionContext";
+
 import InfoLabel from "../components/InfoLabel";
 import "./pageCss/bidPage.css";
 import HeroImage from "../components/HeroImage";
+import Description from "../components/Description";
 
-const BidPage = () => {
+const BidPage = ({}) => {
   return (
     <>
       <AuctionProvider>
@@ -19,7 +19,10 @@ const BidPage = () => {
               <div className="leftBoxDown">
                 <InfoLabel />
               </div>
-              <div className="rightBoxDown"></div>
+              <div className="rightBoxDown">
+                Description:
+                <Description />
+              </div>
             </div>
           </div>
         </HeroImage>
