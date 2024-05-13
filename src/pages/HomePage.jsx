@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ThumbnailProvider } from "../context/ThumbnailContext";
-import Thumbnail from "../components/Thumbnail";
 import Filter from "../components/Filter";
 import AuctionDisplayer from "../components/AuctionDisplayer";
 import "./pageCss/homePage.css";
