@@ -19,9 +19,6 @@ const ThumbnailProvider = ({ children }) => {
             import.meta.env.VITE_API_URL
           }/auctions/filterByStartingPriceBetween/50000/100000000`
         );
-        const resAuctionCar = await axios.get(
-          `${import.meta.env.VITE_API_URL}/auctionTypeCar/all`
-        );
         const reversedOrder = resStartingPrice.data.reverse();
         const activeAuctions = resIsActive.data;
         const filtersCombined = reversedOrder.filter(
@@ -31,8 +28,7 @@ const ThumbnailProvider = ({ children }) => {
             });
           }
         );
-        const testAuctionCar = resAuctionCar.data;
-        setThumbnail(testAuctionCar);
+        setThumbnail(filtersCombined);
       } catch (err) {
         console.log("error: " + err);
       }

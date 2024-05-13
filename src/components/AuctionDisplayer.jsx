@@ -4,7 +4,7 @@ import Thumbnail from "./Thumbnail";
 import "./componentCss/auctionDisplayer.css";
 
 const AuctionDisplayer = () => {
-  const { thumbnail, setThumbnail } = useContext(ThumbnailContext);
+  const { thumbnail } = useContext(ThumbnailContext);
 
   if (!thumbnail || thumbnail.length === 0) {
     return <p className="placeHolderNoAuctions">No Auctions Available!</p>;
@@ -13,7 +13,11 @@ const AuctionDisplayer = () => {
   return (
     <div className="thumbnailWrapper">
       {thumbnail.map((thumbnail) => (
-        <Thumbnail key={thumbnail.id} thumbnail={thumbnail} />
+        <Thumbnail
+          key={thumbnail.id}
+          thumbnail={thumbnail}
+          auctionId={thumbnail.id}
+        />
       ))}
     </div>
   );

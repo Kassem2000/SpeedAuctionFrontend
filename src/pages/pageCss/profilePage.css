@@ -12,6 +12,7 @@
   height: 93vh;
   border-radius: 10px;
   background-color: #1e1b1b;
+  position: sticky;
 }
 
 .rightsideProfile {
