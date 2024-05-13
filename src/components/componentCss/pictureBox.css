@@ -1,5 +1,7 @@
 .leftBoxUpp {
     background-color: #181616;
+    color: white;
+    font-size: 50px;
     position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
     width: 1150px; /* Bredden på rutan */
     height: 600px; /* Höjden på rutan */

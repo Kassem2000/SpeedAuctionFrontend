@@ -16,6 +16,7 @@
     margin-bottom: 20px; /* Avstånd mellan rutorna */
     border-radius: 10px;
     color: white;
+    padding: 10px;
   }
   
   
@@ -38,4 +39,5 @@
     margin-bottom: 20px; 
     border-radius: 10px;
     color: white;
+    padding: 10px;
   }

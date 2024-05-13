@@ -1,0 +1,29 @@
+.bidInfo {
+  color: white;
+  padding: 15px;
+}
+
+.created, .box1 {
+    margin-bottom: 20px;
+}
+
+.box1, .box2, .box3, .box4 {
+    margin-bottom: 20px;
+    background-color: black;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.box4 {
+    background-color: #8D0000;
+}
+
+.grenClick {
+    background-color: #1F4910;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 25px;
+}

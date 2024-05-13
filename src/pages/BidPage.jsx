@@ -5,6 +5,7 @@ import "./pageCss/bidPage.css";
 import HeroImage from "../components/HeroImage";
 import Description from "../components/Description";
 import PictureBox from "../components/PictureBox";
+import BidInfo from "../components/BidInfo";
 
 const BidPage = ({}) => {
   return (
@@ -14,7 +15,9 @@ const BidPage = ({}) => {
           <div className="auctionPage">
             <div className="upperBoxes">
               <PictureBox />
-              <div className="rightBoxUpp"></div>
+              <div className="rightBoxUpp">
+                <BidInfo />
+              </div>
             </div>
             <div className="lowerBoxes">
               <div className="leftBoxDown">
