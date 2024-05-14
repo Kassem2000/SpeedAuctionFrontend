@@ -15,7 +15,9 @@ const BidInfo = () => {
             <h2 className='box2'>Top bid:</h2>
         </label>
         <label>
-            <h2 className='box3'>Bid amount</h2>
+            <h2 className='box3'>Bid amount:
+            <input type="number" ></input>
+            </h2>
         </label>
         <label>
             <h2 className='box4'>Auction ends:</h2>
