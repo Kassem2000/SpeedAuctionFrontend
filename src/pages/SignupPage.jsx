@@ -3,50 +3,34 @@ import "./pageCss/signupPage.css";
 import HeroImage from "../components/HeroImage";
 
 const SignupPage = () => {
+  //values objects
+  const [values, setValues] = useState({
+    username: "",
+    first_name: "",
+    last_name: "",
+    phone_number: "",
+    email: "",
+    address: "",
+    city: "",
+    country: "",
+    postal_code: "",
+    password: "",
+    confirmpassword: "",
+  });
+
   return (
     <HeroImage>
-      <div className="register-form">
-        <form>
-          <h1>Sign up</h1>
-          <div className="input-group">
-            <label>
-              <input type="text" name="Username" placeholder="Usename" />
-            </label>
-            <label>
-              <input type="text" name="Firstname" placeholder="First Name" />
-            </label>
-            <label>
-              <input type="text" name="lastname" placeholder="Last Name" />
-            </label>
-            <label>
-              <input type="text" name="password" placeholder="Password" />
-            </label>
-            <label>
-              <input type="text" name="email" placeholder="Email" />
-            </label>
+      <div className="signup-page">
+        <form className="signup-form">
+          <h1 signup-form-title>Sign up</h1>
+          <div className="signup-input-grid">
+            <div className="FormInput">
+              <label className="signup-label"></label>
+              <input className="signup-input" />
+            </div>
+            <span className="signup-span"></span>
           </div>
-          <div className="input-group">
-            <label>
-              <input type="text" name="Adress" placeholder="Address" />
-            </label>
-            <label>
-              <input type="text" name="Country" placeholder="Country" />
-            </label>
-            <label>
-              <input type="text" name="City" placeholder="City" />
-            </label>
-            <label>
-              <input
-                type="text"
-                name="phonenumber"
-                placeholder="Phone Number "
-              />
-            </label>
-            <label>
-              <input type="text" name="postal code" placeholder="Postal Code" />
-            </label>
-          </div>
-          <button type="submit">Confirm</button>
+          <button className="signup_submit_btn">Sign up</button>
         </form>
       </div>
     </HeroImage>
