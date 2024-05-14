@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ThumbnailContext } from "../context/ThumbnailContext";
 import Thumbnail from "./Thumbnail";
+import Filter from "./Filter";
 import "./componentCss/auctionDisplayer.css";
 
 const AuctionDisplayer = () => {
