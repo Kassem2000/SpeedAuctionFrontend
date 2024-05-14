@@ -1,14 +1,14 @@
+import "../pages/pageCss/signupPage.css";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Signupform from "../components/Signupform";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 
-
 const SignupPage = () => {
 
-  const{dispatch} = useContext(AuthContext);
+   const[focused, setFocused] = useState({});
 
+  const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
   //values objects
@@ -20,12 +20,12 @@ const SignupPage = () => {
     email: "",
     address: "",
     city: "",
-    country:"",
+    country: "",
     postal_code: "",
     password: "",
-    confirmpassword: ""
-
+    confirmpassword: "",
   });
+
   //inputs
   const inputs = [
     {
@@ -134,22 +134,22 @@ const SignupPage = () => {
     },
   ];
 
+  const handleFocus = (e) =>{
+    setFocused({... focused, [e.target.name]:true});
+  }
+
   const handleSubmit = async (e) => {
-    e.preventDefault(); // if you dont write this once click on submit  the page will only reload.... viktigt
+    e.preventDefault(); //  viktig!!! if you dont write this once click on submit  the page will only reload.... viktigt
 
-    // Check if passwords match
-    if (values.password !== values.confirmpassword) {
-      alert("Passwords do not match");
-      return;
-    }
+   
+    const { confirmpassword, ...userData } = values; 
 
-    const{confirmpassword, ...userData }= values; //exclude comfirmpassword
-
-    try{
+    try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/auth/signup",
+        `${import.meta.env.VITE_API_URL}/auth/signup`,
 
-        userData, //directly send data not as property
+        userData, //skickar datan directly
+
         {
           headers: {
             "Content-Type": "application/json",
@@ -158,44 +158,51 @@ const SignupPage = () => {
         }
       );
 
-       dispatch({
-         type: "SIGNUP",
-         payload: data,
-       });
-       window.localStorage.setItem("user", JSON.stringify(data));
-       console.log("Succesfull")
+      dispatch({
+        type: "SIGNUP",
+        payload: data,
+      });
+      window.localStorage.setItem("user", JSON.stringify(data));
+      console.log("Succesfull");
 
-       return navigate("/");
-
-    } catch(err){
+      return navigate("/");
+    } catch (err) {
       console.error("ERROR:" + err);
       alert("Registration Failled");
     }
   };
 
-
-
-
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-
   return (
+    
     <div className="signup-page">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h1 className="signup-form-title">Sign Up</h1>
         <div className="signup-input-grid">
           {inputs.map((input) => (
-            <Signupform
-              key={input.id}
-              {...input}
-              values={values[input.name]}
-              onChange={onChange}
-            />
+            <div className="FormInput" key={input.id}>
+              <label className="signup-label">{input.label}</label>
+              <input
+                className="signup-input"
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+                onBlur={handleFocus}
+                onFocus={() =>
+                  input.name === "confirmpassword" && setFocused(true)
+                }
+                focused={focused[input.name]?.toString()}
+              />
+              <span className="signup-span">{input.errorMessage}</span>
+            </div>
           ))}
         </div>
-        <button className="signup-submit-btn" type="submit">Sign Up</button>
+        <button className="signup-submit-btn" type="submit">
+          Sign Up
+        </button>
       </form>
     </div>
   );
