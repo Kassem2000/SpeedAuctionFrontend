@@ -15,23 +15,25 @@
 }
 
 .rightBoxUpp {
-  background-color: #181616;
+  background-color: #161414;
   position: absolute;
   width: 660px;
   height: 600px;
   top: 100px;
   right: 60px; /* Avstånd från högerkanten */
   border-radius: 15px;
+  opacity: 0.9;
 }
 
 .leftBoxUpp {
-  background-color: #181616;
+  background-color: #161414;
   position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
   width: 1150px; /* Bredden på rutan */
   height: 600px; /* Höjden på rutan */
   top: 100px; /* Avstånd från överkanten */
   left: 20px; /* Avstånd från vänsterkanten */
   border-radius: 15px;
+  opacity: 0.9;
 }
 
 .lowerBoxes {
@@ -41,18 +43,17 @@
 }
 
 .rightBoxDown {
-  background-color: #181616;
-  
+  background-color: #161414;
   position: absolute;
   width: 900px;
   height: 300px;
   top: 720px;
   right: 60px;
   border-radius: 10px;
+  opacity: 0.9;
 }
 
 .description-title {
-
   color: white;
   font-size: 30px;
   margin-left: 350px;
