@@ -1,4 +1,5 @@
 import "../pages/pageCss/signupPage.css";
+import HeroImage from "../components/HeroImage";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
@@ -177,34 +178,34 @@ const SignupPage = () => {
   };
 
   return (
-    
-    <div className="signup-page">
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <h1 className="signup-form-title">Sign Up</h1>
-        <div className="signup-input-grid">
-          {inputs.map((input) => (
-            <div className="FormInput" key={input.id}>
-              <label className="signup-label">{input.label}</label>
-              <input
-                className="signup-input"
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-                onBlur={handleFocus}
-                onFocus={() =>
-                  input.name === "confirmpassword" && setFocused(true)
-                }
-                focused={focused[input.name]?.toString()}
-              />
-              <span className="signup-span">{input.errorMessage}</span>
-            </div>
-          ))}
-        </div>
-        <button className="signup-submit-btn" type="submit">
-          Sign Up
-        </button>
-      </form>
-    </div>
+    <HeroImage>
+      <div className="signup-page">
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <h1 className="signup-form-title">Sign Up</h1>
+
+            {inputs.map((input) => (
+              <div className="FormInput" key={input.id}>
+                <input
+                  className="signup-input"
+                  {...input}
+                  value={values[input.name]}
+                  onChange={onChange}
+                  onBlur={handleFocus}
+                  onFocus={() =>
+                    input.name === "confirmpassword" && setFocused(true)
+                  }
+                  focused={focused[input.name]?.toString()}
+                />
+                <span className="signup-span">{input.errorMessage}</span>
+              </div>
+            ))}
+         
+          <button className="signup-submit-btn" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </HeroImage>
   );
 };
 

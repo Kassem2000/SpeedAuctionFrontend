@@ -15,7 +15,6 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Header />
-        <HeroImage />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/bid" element={<BidPage />} />

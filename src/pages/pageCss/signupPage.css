@@ -1,21 +1,30 @@
+.signup-page{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.signup-form{
+  grid-template-columns: 1fr 1fr;
+  width: 500px;
+  gap: 30px;
 
-.signup-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
-  margin: 10px 15px;
-  width: 20pc;
-  background-color: rgba(22, 20, 20, 0.776);
-  border: none;
-  border-radius: 6px;
-  color: rgba(255, 255, 255, 0.333);
-  font-size: 14px;
+}
+.signup-form-title{
+  margin-top: 90px;
   margin-bottom: 10px;
- 
+  height: 5px;
+  font-size: 44px;
+  color: black;
+  
+}
+.FormInput{
+  height: 70px;
+  margin-top: -10px;
 }
 
-/* change position to relativ or absolut */
+.signup-submit-btn{
+  margin-top: 25px;
+}
 .signup-span {
   font-size: 12px;
   padding: 3px;
@@ -24,71 +33,14 @@
   position: relative;
 
 }
-
 .signup-input:invalid[focused="true"]~span {
   display: block;
 }
-
 .signup-input:invalid[focused="true"] {
   border-radius: 6px red;
-  border: 2px solid red;
+  border: 1px solid red;
 }
-
-.signup-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 120vh;
-
-}
-.signup-input-grid{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 30px;
-}
-
-.signup-form {
- background:transparent;
- padding: 20px;
- border-radius: 8px;
- position: absolute;
- 
-}
-
-
-.signup-form-title {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 44px;
-  color: black;
-}
-
-.signup-submit-btn {
-  font-weight: bold;
-  width: 100%;
-  padding: 15px;
-  margin-top: 60px;
-  background-color: rgb(22, 20, 20);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 20px;
-}
-.signup-submit-btn:hover {
-  background-color: rgba(22, 20, 20, 0.59);
-}
-
-.signup-label {
-  margin-left: 2pc;
-  font-size: 22px;
-  font-weight:bold;
-  color:white;
-}
-
-/* Media Query for smaller screens */
 @media (max-width: 768px) {
   .signup-input-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;}
   }
-}
