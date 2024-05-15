@@ -1,53 +1,46 @@
-.register-form {
-    width: 50pc;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-  }
+.signup-page{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.signup-form{
+  grid-template-columns: 1fr 1fr;
+  width: 500px;
+  gap: 30px;
+
+}
+.signup-form-title{
+  margin-top: 90px;
+  margin-bottom: 10px;
+  height: 5px;
+  font-size: 44px;
+  color: black;
   
-  form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-  }
-  
-  input[type="text"],
-  textarea {
-    width: 100%;
-    background-color: #1a1a1a;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-top: 50px;
-    height: 3pc;
-    font-weight: bold;
-    font-size: 14px;
-    color: white;
-  }
-  input[type="text"]::placeholder,
-  textarea::placeholder {
-    font-size: 16px;
-    color: white;
-  }
-  
-  button {
-    grid-column: 1 / -1;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #92929242;
-  }
-  
-  h1 {
-    grid-column: 1 / -1;
-    text-align: center;
+}
+.FormInput{
+  height: 70px;
+  margin-top: -10px;
+}
+
+.signup-submit-btn{
+  margin-top: 25px;
+}
+.signup-span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+  position: relative;
+
+}
+.signup-input:invalid[focused="true"]~span {
+  display: block;
+}
+.signup-input:invalid[focused="true"] {
+  border-radius: 6px red;
+  border: 1px solid red;
+}
+@media (max-width: 768px) {
+  .signup-input-grid {
+    grid-template-columns: 1fr;}
   }
