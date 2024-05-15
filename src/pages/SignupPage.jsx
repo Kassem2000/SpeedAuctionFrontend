@@ -45,7 +45,7 @@ const SignupPage = () => {
       name: "first_name",
       type: "text",
       placeholder: "name",
-      errorMessage: "cannot be emty",
+      errorMessage: " Name cannot be emty",
       label: "Name",
       required: true,
     },
@@ -54,7 +54,7 @@ const SignupPage = () => {
       name: "last_name",
       type: "text",
       placeholder: "Lastname",
-      errorMessage: "cannot be emty",
+      errorMessage: "Lastname cannot be emty",
       label: "Lastname",
       required: true,
     },
@@ -63,7 +63,7 @@ const SignupPage = () => {
       name: "phone_number",
       type: "text",
       placeholder: "Phone number",
-      errorMessage: "cannot be emty",
+      errorMessage: "Phone number cannot be emty",
       label: "Phone number",
       required: true,
     },
@@ -81,7 +81,7 @@ const SignupPage = () => {
       name: "address",
       type: "text",
       placeholder: "Adress",
-      errorMessage: "cannot be emty",
+      errorMessage: "Address cannot be emty",
       label: "Adress",
       required: true,
     },
@@ -90,7 +90,7 @@ const SignupPage = () => {
       name: "city",
       type: "text",
       placeholder: "City",
-      errorMessage: "cannot be emty",
+      errorMessage: "city cannot be emty",
       label: "City",
       required: true,
     },
@@ -108,7 +108,7 @@ const SignupPage = () => {
       name: "postal_code",
       type: "text",
       placeholder: "Postal Code",
-      errorMessage: "cannot be emty",
+      errorMessage: "Postal code cannot be emty",
       label: "Postal Code",
       required: true,
     },
@@ -147,7 +147,7 @@ const SignupPage = () => {
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/auth/signup`,
+        "http://localhost:8080/api/auth/signup", //ändra innan du merga till main!!!!!!
 
         userData, //skickar datan directly
 
@@ -165,6 +165,7 @@ const SignupPage = () => {
       });
       window.localStorage.setItem("user", JSON.stringify(data));
       console.log("Succesfull");
+      alert("Registration Succesfull");
 
       return navigate("/");
     } catch (err) {
