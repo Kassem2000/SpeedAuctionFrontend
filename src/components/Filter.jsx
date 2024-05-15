@@ -1,23 +1,19 @@
 import "./componentCss/filter.css";
-import { IoIosArrowDown } from "react-icons/io";
-import { useEffect, createContext, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
-const pTags = [];
+const yearOptions = [];
 
-for (let year = 1900; year <= 2030; year++) {
-  pTags.push(`${year}`);
+for (let year = 2030; year >= 1900; year--) {
+  yearOptions.push(`${year}`);
 }
 
-const FilterContext = createContext();
+const yearList = yearOptions.join("\n");
 
-const yearList = pTags.join("\n");
-
-const Filter = () => {
+const Filter = ({ setFilteredAuctions }) => {
   const [carBrand, setCarBrand] = useState("noFilter");
   const [carColor, setCarColor] = useState("noFilter");
   const [carYear, setCarYear] = useState("noFilter");
-  const [filteredAuctions, setFilteredAuctions] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +37,7 @@ const Filter = () => {
           );
         });
         filterCombined = filteredBrand;
-        console.log("dadfas: ", filterCombined);
+        console.log("carBrand filterCombined: ", filterCombined);
       }
 
       if (carColor !== "noFilter") {
@@ -56,7 +52,7 @@ const Filter = () => {
           );
         });
         filterCombined = filteredColor;
-        console.log("bef: ", filterCombined);
+        console.log("carColor filterCombined: ", filterCombined);
       }
 
       if (carYear !== "noFilter") {
@@ -71,10 +67,10 @@ const Filter = () => {
           );
         });
         filterCombined = filteredYear;
-        console.log("g: ", filterCombined);
+        console.log("carYear filterCombined: ", filterCombined);
       }
 
-      console.log(filterCombined);
+      console.log("filterCombined: ", filterCombined);
       setFilteredAuctions(filterCombined);
     } catch (err) {
       console.log("Error: ", err);
