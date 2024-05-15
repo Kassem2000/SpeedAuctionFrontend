@@ -28,6 +28,14 @@ const AuctionProvider = ({ children }) => {
     }
   };
 
+  /*const putBid = async (newBid) => {
+    try {
+      await axios.post(`${import.meta.env.VITE_API_URL}/Bid`, newBid);
+    } catch (err) {
+      console.log("Error: " + err);
+    }
+  };*/
+
   return (
     <AuctionContext.Provider
       value={{
