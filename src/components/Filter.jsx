@@ -15,8 +15,8 @@ const Filter = ({ setFilteredAuctions }) => {
   const [carColor, setCarColor] = useState("noFilter");
   const [carYear, setCarYear] = useState("noFilter");
   const [carMiles, setCarMiles] = useState("");
-  const [carMinPrice, setCarMinPrice] = useState("");
-  const [carMaxPrice, setCarMaxPrice] = useState("");
+  const [minPrice, setCarMinPrice] = useState("");
+  const [maxPrice, setCarMaxPrice] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -87,19 +87,41 @@ const Filter = ({ setFilteredAuctions }) => {
         filterCombined = filteredMiles;
         console.log("carMiles filterCombined: ", filterCombined);
       }
-      if (carMinPrice !== "" && carMaxPrice !== "") {
+      if (minPrice !== "" && maxPrice !== "") {
+        //retrieving auctions based on only startingPrice and not taking highest bid into account, might try to fix later
         const resPrice = await axios.get(
           `${
             import.meta.env.VITE_API_URL
-          }/auctionTypeCar/filterByMilesDriven/${carMiles}/${carMiles}`
+          }/auctions/filterByStartingPriceBetween/${minPrice}/${maxPrice}`
         );
-        const filteredMiles = resMiles.data.filter((auction) => {
+
+        const convertAuctionToAuctionTypeCar = resPrice.data.map(
+          async (auctionWithMatchingPrice) => {
+            const response = await axios.get(
+              `${import.meta.env.VITE_API_URL}/auctionTypeCar/filterByAuction/${
+                auctionWithMatchingPrice.id
+              }`
+            );
+            return response.data;
+          }
+        );
+
+        const auctionTypeCarResponse = await Promise.all(
+          convertAuctionToAuctionTypeCar
+        );
+
+        const combinedData = auctionTypeCarResponse.flatMap(
+          (objects) => objects
+        );
+
+        const filteredPrice = combinedData.filter((auction) => {
           return filterCombined.some(
             (resultAuction) => resultAuction.id === auction.id
           );
         });
-        filterCombined = filteredMiles;
-        console.log("carMiles filterCombined: ", filterCombined);
+
+        filterCombined = filteredPrice;
+        console.log("carPrice filterCombined: ", filterCombined);
       }
       if (filterCombined.length !== 0) {
         setFilteredAuctions(filterCombined);
@@ -209,12 +231,11 @@ const Filter = ({ setFilteredAuctions }) => {
             <option value="SILVER">Silver</option>
           </select>
         </div>
-        <div className="filterLabel">
+        <div className="filterLabel filterLabelInput">
           <div className="textCont">
             <h3>Max Miles Driven</h3>
           </div>
-          <div className="dropdown-content">
-            <p>Input Max Miles:</p>
+          <div className="dropdown-content dropDownInput dropDownMiles">
             <input
               type="text"
               placeholder="miles"
@@ -224,20 +245,20 @@ const Filter = ({ setFilteredAuctions }) => {
           </div>
         </div>
 
-        <div className="filterLabel">
+        <div className="filterLabel filterLabelInput">
           <div className="textCont">
             <h3>Price</h3>
           </div>
-          <div className="dropdown-content">
+          <div className="dropdown-content dropDownInput">
             <input
               type="text"
-              placeholder="Enter minimum price"
+              placeholder="minimum"
               value={minPrice}
               onChange={handleMinPriceChange}
             />
             <input
               type="text"
-              placeholder="Enter maximum price"
+              placeholder="maximum"
               value={maxPrice}
               onChange={handleMaxPriceChange}
             />

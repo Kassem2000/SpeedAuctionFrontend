@@ -5,22 +5,40 @@ import "./componentCss/thumbnail.css";
 
 const Thumbnail = ({ thumbnail, auctionId }) => {
   const [imageUrl, setImageUrl] = useState("");
+  const [thumbnailCost, setThumbnailCost] = useState("");
 
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const res = await axios.get(
+        const resImg = await axios.get(
           `${
             import.meta.env.VITE_API_URL
           }/auctionTypeCar/filterByAuction/${auctionId}`
         );
-        setImageUrl(res.data[0].carPng);
+        setImageUrl(resImg.data[0].carPng);
       } catch (err) {
-        console.log("Error fetching image: ", err);
+        console.log("Image fetching error: ", err);
+      }
+    };
+    const fetchCost = async () => {
+      try {
+        const resBid = await axios.get(
+          `${
+            import.meta.env.VITE_API_URL
+          }/bids/getTopBidByAuctionId/${auctionId}`
+        );
+        setThumbnailCost(resBid.data.amount);
+      } catch (err) {}
+    };
+    const setStandardPrice = async () => {
+      if (thumbnailCost === "") {
+        setThumbnailCost(thumbnail.startingPrice);
       }
     };
     fetchImage();
-  }, [auctionId]);
+    fetchCost();
+    setStandardPrice();
+  }, []);
 
   return (
     <Link className="linkAuction" to={"bid/" + thumbnail.id}>
@@ -31,7 +49,7 @@ const Thumbnail = ({ thumbnail, auctionId }) => {
       ></img>
       <div className="elementContainerThumb">
         <div className="thumbnailRating">&#9733;</div>
-        <h3 className="thumbnailCost">{thumbnail.startingPrice}</h3>
+        <h3 className="thumbnailCost">{thumbnailCost}</h3>
       </div>
     </Link>
   );
