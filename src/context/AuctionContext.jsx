@@ -9,32 +9,36 @@ const AuctionProvider = ({ children }) => {
   const [displayedAuction, setDisplayedAuction] = useState([]);
   const [auctionTypeCar, setAuction] = useState([]);
 
-  let AuctionId = "65f37069fdebd262e6b69505"
-  useEffect(() => {
-    const fetchAuctions = async () => {
-      try {
-        const resAuctions = await axios.get(
-          `${import.meta.env.VITE_API_URL}/auctions/${AuctionId}`
-        );
 
-        const AuctionCar = await axios.get(
-          `${
-            import.meta.env.VITE_API_URL
-          }/auctionTypeCar/filterByAuction/${AuctionId}`
-        );
+  const fetchAuctionById = async (auctionId) => {
+    try {
+      const resAuctions = await axios.get(
+        `${import.meta.env.VITE_API_URL}/auctions/${auctionId}`
+      );
+      const AuctionCar = await axios.get(
+        `${
+          import.meta.env.VITE_API_URL
+        }/auctionTypeCar/filterByAuction/${auctionId}`
+      );
 
-        setAuction(AuctionCar.data[0]);
-        setDisplayedAuction(resAuctions.data)
-        console.log("auction data: " + JSON.stringify(resAuctions.data));
-      } catch (err) {
-        console.log("error: " + err);
-      }
-    };
-    fetchAuctions();
-  }, []);
+      setAuction(AuctionCar.data[0]);
+      setDisplayedAuction(resAuctions.data);
+    } catch (err) {
+      console.error("error: " + err); 
+    }
+  };
 
   return (
-    <AuctionContext.Provider value={{ auctionTypeCar, setAuction, displayedAuction, setDisplayedAuction }}>
+    <AuctionContext.Provider
+      value={{
+        auctionTypeCar,
+        setAuction,
+        displayedAuction,
+        setDisplayedAuction,
+
+        fetchAuctionById,
+      }}
+    >
       {children}
     </AuctionContext.Provider>
   );

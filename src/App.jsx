@@ -6,24 +6,25 @@ import CreateAuctionPage from "./pages/CreateAuctionPage";
 import ProfilePage from "./pages/ProfilePage";
 import BidPage from "./pages/BidPage";
 import Header from "./components/Header";
-import HeroImage from "./components/HeroImage";
-import{AuthProvider} from "./context/AuthContext";
-
+import { AuthProvider } from "./context/AuthContext";
+import { AuctionProvider } from "./context/AuctionContext";
 
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/bid" element={<BidPage />} />
-          <Route path="/createAuction" element={<CreateAuctionPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-        </Routes>
-      </BrowserRouter>
+      <AuctionProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/bid/:id" element={<BidPage />} />
+            <Route path="/createAuction" element={<CreateAuctionPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+          </Routes>
+        </BrowserRouter>
+      </AuctionProvider>
     </AuthProvider>
   );
 }

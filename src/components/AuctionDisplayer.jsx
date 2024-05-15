@@ -4,7 +4,7 @@ import Thumbnail from "./Thumbnail";
 import "./componentCss/auctionDisplayer.css";
 
 const AuctionDisplayer = () => {
-  const { thumbnail, setThumbnail } = useContext(ThumbnailContext);
+  const { thumbnail } = useContext(ThumbnailContext);
 
   if (!thumbnail || thumbnail.length === 0) {
     return <p className="placeHolderNoAuctions">No Auctions Available!</p>;
