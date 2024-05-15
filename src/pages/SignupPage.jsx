@@ -6,8 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 
 const SignupPage = () => {
-
-   const[focused, setFocused] = useState({});
+  const [focused, setFocused] = useState({});
 
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -135,15 +134,14 @@ const SignupPage = () => {
     },
   ];
 
-  const handleFocus = (e) =>{
-    setFocused({... focused, [e.target.name]:true});
-  }
+  const handleFocus = (e) => {
+    setFocused({ ...focused, [e.target.name]: true });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault(); //  viktig!!! if you dont write this once click on submit  the page will only reload.... viktigt
 
-   
-    const { confirmpassword, ...userData } = values; 
+    const { confirmpassword, ...userData } = values;
 
     try {
       const { data } = await axios.post(
@@ -184,23 +182,23 @@ const SignupPage = () => {
         <form className="signup-form" onSubmit={handleSubmit}>
           <h1 className="signup-form-title">Sign Up</h1>
 
-            {inputs.map((input) => (
-              <div className="FormInput" key={input.id}>
-                <input
-                  className="signup-input"
-                  {...input}
-                  value={values[input.name]}
-                  onChange={onChange}
-                  onBlur={handleFocus}
-                  onFocus={() =>
-                    input.name === "confirmpassword" && setFocused(true)
-                  }
-                  focused={focused[input.name]?.toString()}
-                />
-                <span className="signup-span">{input.errorMessage}</span>
-              </div>
-            ))}
-         
+          {inputs.map((input) => (
+            <div className="FormInput" key={input.id}>
+              <input
+                className="signup-input"
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+                onBlur={handleFocus}
+                onFocus={() =>
+                  input.name === "confirmpassword" && setFocused(true)
+                }
+                focused={focused[input.name]?.toString()}
+              />
+              <span className="signup-span">{input.errorMessage}</span>
+            </div>
+          ))}
+
           <button className="signup-submit-btn" type="submit">
             Sign Up
           </button>
