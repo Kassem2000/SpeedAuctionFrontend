@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const LoginPage = () => {
   return (
     <HeroImage>
-      <form action="">
+      <form className="logform">
         <div className="Login">
           <h1>Login</h1>
           <div className="input-box">
