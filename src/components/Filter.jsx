@@ -14,6 +14,9 @@ const Filter = ({ setFilteredAuctions }) => {
   const [carBrand, setCarBrand] = useState("noFilter");
   const [carColor, setCarColor] = useState("noFilter");
   const [carYear, setCarYear] = useState("noFilter");
+  const [carMiles, setCarMiles] = useState("");
+  const [carMinPrice, setCarMinPrice] = useState("");
+  const [carMaxPrice, setCarMaxPrice] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -70,8 +73,40 @@ const Filter = ({ setFilteredAuctions }) => {
         console.log("carYear filterCombined: ", filterCombined);
       }
 
+      if (carMiles !== "") {
+        const resMiles = await axios.get(
+          `${
+            import.meta.env.VITE_API_URL
+          }/auctionTypeCar/filterByMilesDriven/0/${carMiles}`
+        );
+        const filteredMiles = resMiles.data.filter((auction) => {
+          return filterCombined.some(
+            (resultAuction) => resultAuction.id === auction.id
+          );
+        });
+        filterCombined = filteredMiles;
+        console.log("carMiles filterCombined: ", filterCombined);
+      }
+      if (carMinPrice !== "" && carMaxPrice !== "") {
+        const resPrice = await axios.get(
+          `${
+            import.meta.env.VITE_API_URL
+          }/auctionTypeCar/filterByMilesDriven/${carMiles}/${carMiles}`
+        );
+        const filteredMiles = resMiles.data.filter((auction) => {
+          return filterCombined.some(
+            (resultAuction) => resultAuction.id === auction.id
+          );
+        });
+        filterCombined = filteredMiles;
+        console.log("carMiles filterCombined: ", filterCombined);
+      }
+      if (filterCombined.length !== 0) {
+        setFilteredAuctions(filterCombined);
+      } else {
+        alert("no auctions matched filter!");
+      }
       console.log("filterCombined: ", filterCombined);
-      setFilteredAuctions(filterCombined);
     } catch (err) {
       console.log("Error: ", err);
     }
@@ -87,6 +122,15 @@ const Filter = ({ setFilteredAuctions }) => {
 
   const handleYearChange = (e) => {
     setCarYear(e.target.value);
+  };
+  const handleMilesChange = (e) => {
+    setCarMiles(e.target.value);
+  };
+  const handleMinPriceChange = (e) => {
+    setCarMinPrice(e.target.value);
+  };
+  const handleMaxPriceChange = (e) => {
+    setCarMaxPrice(e.target.value);
   };
 
   return (
@@ -113,15 +157,6 @@ const Filter = ({ setFilteredAuctions }) => {
         </div>
         <div className="filterLabel">
           <div className="textCont">
-            <h3>Model</h3>
-          </div>
-          <div className="dropdown-content">
-            <p>Input Model:</p>
-            <input type="text" placeholder="model" />
-          </div>
-        </div>
-        <div className="filterLabel">
-          <div className="textCont">
             <h3>Brand</h3>
           </div>
           <select
@@ -145,15 +180,7 @@ const Filter = ({ setFilteredAuctions }) => {
             <option value="ASTON MARTIN">Aston Martin</option>
           </select>
         </div>
-        <div className="filterLabel">
-          <div className="textCont">
-            <h3>Miles Driven</h3>
-          </div>
-          <div className="dropdown-content">
-            <p>Input Miles:</p>
-            <input type="text" placeholder="miles" />
-          </div>
-        </div>
+
         <div className="filterLabel">
           <div className="textCont">
             <h3>Color</h3>
@@ -182,14 +209,38 @@ const Filter = ({ setFilteredAuctions }) => {
             <option value="SILVER">Silver</option>
           </select>
         </div>
+        <div className="filterLabel">
+          <div className="textCont">
+            <h3>Max Miles Driven</h3>
+          </div>
+          <div className="dropdown-content">
+            <p>Input Max Miles:</p>
+            <input
+              type="text"
+              placeholder="miles"
+              value={carMiles}
+              onChange={handleMilesChange}
+            />
+          </div>
+        </div>
 
         <div className="filterLabel">
           <div className="textCont">
             <h3>Price</h3>
           </div>
           <div className="dropdown-content">
-            <input type="text" placeholder="Enter minimum price" />
-            <input type="text" placeholder="Enter maximum price" />
+            <input
+              type="text"
+              placeholder="Enter minimum price"
+              value={minPrice}
+              onChange={handleMinPriceChange}
+            />
+            <input
+              type="text"
+              placeholder="Enter maximum price"
+              value={maxPrice}
+              onChange={handleMaxPriceChange}
+            />
           </div>
         </div>
       </div>
