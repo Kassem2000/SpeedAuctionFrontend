@@ -11,20 +11,23 @@
 }
 
 .thumbnailImg {
-  width: 400px;
+  background: gray;
+  min-width: 300px;
+  max-width: 550px;
   height: 230px;
   border-radius: 20px;
-  background: url("imageThumbnail.jpg");
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
   display: flex;
   flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.elementContainerThumb {
+  position: absolute;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 20px;
-  cursor: pointer;
-  box-sizing: border-box;
+  margin-left: 10px;
+  height: 220px;
 }
 
 .thumbnailCost,
@@ -43,9 +46,4 @@
 
 .yellowStar {
   color: gold;
-}
-
-.thumbnailWrapper {
-  display: flex;
-  margin-top: 60px;
 }

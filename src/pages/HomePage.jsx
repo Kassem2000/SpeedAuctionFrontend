@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import { ThumbnailProvider } from "../context/ThumbnailContext";
+import { useState } from "react";
 import Filter from "../components/Filter";
 import AuctionDisplayer from "../components/AuctionDisplayer";
 import "./pageCss/homePage.css";
 
 const HomePage = () => {
+  const [filteredAuctions, setFilteredAuctions] = useState([]);
+
+  const updateFilteredAuctions = (filterCombined) => {
+    setFilteredAuctions(filterCombined);
+  };
+
   return (
     <>
       <ThumbnailProvider>
@@ -14,9 +21,9 @@ const HomePage = () => {
               <h3>Create Auction</h3>
             </button>
           </Link>
-          <Filter />
+          <Filter setFilteredAuctions={updateFilteredAuctions} />
         </div>
-        <AuctionDisplayer />
+        <AuctionDisplayer filterCombined={filteredAuctions} />
       </ThumbnailProvider>
     </>
   );
