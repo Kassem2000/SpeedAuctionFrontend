@@ -17,7 +17,7 @@ const ThumbnailProvider = ({ children }) => {
         const resStartingPrice = await axios.get(
           `${
             import.meta.env.VITE_API_URL
-          }/auctions/filterByStartingPriceBetween/50000/100000000`
+          }/auctions/filterByStartingPriceBetween/100000/100000000`
         );
         const reversedOrder = resStartingPrice.data.reverse();
         const activeAuctions = resIsActive.data;

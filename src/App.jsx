@@ -7,21 +7,22 @@ import CreateAuctionPage from "./pages/CreateAuctionPage";
 import ProfilePage from "./pages/ProfilePage";
 import BidPage from "./pages/BidPage";
 import Header from "./components/Header";
+import HeroImage from "./components/HeroImage";
 
 function App() {
   return (
     <AuthProvider>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/bid" element={<BidPage />} />
-        <Route path="/createAuction" element={<CreateAuctionPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/bid" element={<BidPage />} />
+          <Route path="/createAuction" element={<CreateAuctionPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
+      </BrowserRouter>
     </AuthProvider>
   );
 }

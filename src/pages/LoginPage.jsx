@@ -8,9 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 
-
 const LoginPage = () => {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -53,18 +51,30 @@ const LoginPage = () => {
       console.log("Error: " + err);
     }
   };
-  
+
   return (
     <HeroImage>
       <form onSubmit={handleSubmit}>
         <div className="Login">
           <h1>Login</h1>
           <div className="input-box">
-            <input type="text"  placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} required/>
+            <input
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
             <FaUser className="icon" />
           </div>
           <div className="input-box">
-            <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+            <input
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
             <FaLock className="icon" />
           </div>
           <div className="remember-forgot">
