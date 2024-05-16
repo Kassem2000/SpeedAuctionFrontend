@@ -1,47 +1,36 @@
-import { useEffect, createContext, useState } from "react";
+import { useEffect, createContext, useReducer } from "react";
 import axios from "axios";
 
+const initialState = { user: null };
+
+const rootReducer = (state, action) => {
+  switch (action.type) {
+    case "CREATAUCTION":
+      return {
+        ...state,
+        user: action.payload,
+      };
+  }
+};
+
 // create context
-const createAuctionContext = createContext();
+const CreateAuctionContext = createContext();
 
 // create provider
-const createAuctionProvider = ({ children }) => {
-  const [auctionCreated, setAuctionCreated] = useState([]);
-
+const CreateAuctionProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(rootReducer, initialState);
   useEffect(() => {
-    const createAuction = async () => {
-      try {
-        const resAuction = await axios.post(
-          `${import.meta.env.VITE_API_URL}/auctions`
-        );
-        const resAuctionTypeCar = await axios.post(
-          `${import.meta.env.VITE_API_URL}/auctionTypeCar`
-        );
-        setAuctionCreated(response.data);
-      } catch (error) {
-        console.error("Error creating auction:", error);
-      }
-    };
-    createAuction();
+    dispatch({
+      type: "CREATAUCTION",
+      payload: JSON.stringify(window.localStorage.getItem("auction")),
+    });
   }, []);
 
-  const addcreateAuction = async (newcreateAuction) => {
-    try {
-      await axios.post(
-        `${import.meta.env.VITE_API_URL}/createAuction`,
-        newcreateAuction
-      );
-    } catch (err) {
-      console.log("Error " + err);
-    }
-  };
   return (
-    <createAuctionContext.Provider
-      value={{ createAuction, setAuctionCreated, newcreateAuction }}
-    >
+    <CreateAuctionContext.Provider value={{ state, dispatch }}>
       {children}
-    </createAuctionContext.Provider>
+    </CreateAuctionContext.Provider>
   );
 };
 
-export { createAuctionContext, createAuctionProvider };
+export { CreateAuctionContext, CreateAuctionProvider };
