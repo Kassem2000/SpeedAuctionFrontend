@@ -8,6 +8,9 @@ const initialState = {
 // define the reducer
 const rootReducer = (state, action) => {
   switch (action.type) {
+    case "SIGNUP":
+      return { ...state, user: action.payload };
+
     case "LOGIN":
       return { ...state, user: action.payload };
     case "LOGOUT":
