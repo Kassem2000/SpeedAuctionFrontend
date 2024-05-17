@@ -29,7 +29,7 @@ const LoginPage = () => {
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/auth/signing`,
+         "http://localhost:8080/api/auth/signing",
         {
           username,
           password,
@@ -49,7 +49,7 @@ const LoginPage = () => {
       console.log("User logged in");
 
       // redirect use to Home
-      return navigate("/");
+      return navigate("/profile"); //redirect to profile
     } catch (err) {
       console.log("Error: " + err);
     }
