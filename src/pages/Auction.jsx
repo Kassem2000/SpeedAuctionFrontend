@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import "./pageCss/createAuctionPage.css";
 import HeroImage from "../components/HeroImage";
 import {
@@ -69,9 +70,10 @@ const Auction = () => {
                 onChange={onChange}
               />
             </label>
+
+            <button type="submit">Next</button>
           </form>
         </div>
-        <button type="submit">Next</button>
       </HeroImage>
     </CreateAuctionProvider>
   );
