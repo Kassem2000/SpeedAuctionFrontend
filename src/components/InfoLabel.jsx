@@ -4,7 +4,7 @@ import { AuctionContext } from "../context/AuctionContext";
 import { useContext } from "react";
 
 const InfoLabel = () => {
-  const { auctionTypeCar } = useContext(AuctionContext);
+  const { auctionTypeCar, displayedAuction } = useContext(AuctionContext);
   return (
     <>
       <div className="label-left">
@@ -15,10 +15,14 @@ const InfoLabel = () => {
           <h2 className="label1-2">Brand: {auctionTypeCar.brand}</h2>
         </label>
         <label>
-          <h2 className="label1-3">Year Manufactured: {auctionTypeCar.yearManufactured}</h2>
+          <h2 className="label1-3">
+            Year Manufactured: {auctionTypeCar.yearManufactured}
+          </h2>
         </label>
         <label>
-          <h2 className="label1-4">Miles Driven: {auctionTypeCar.milesDriven}</h2>
+          <h2 className="label1-4">
+            Miles Driven: {auctionTypeCar.milesDriven}
+          </h2>
         </label>
       </div>
       <div className="label-right">
@@ -32,7 +36,7 @@ const InfoLabel = () => {
           <h2 className="label2-3">Condition: {auctionTypeCar.condition}</h2>
         </label>
         <label>
-          <h2 className="label2-3">Bids: </h2>
+          <h2 className="label2-3">Bids: {displayedAuction.bidCount}</h2>
         </label>
       </div>
     </>
