@@ -1,11 +1,11 @@
 .description {
-    background-color: black;
-    color: white;
-    position: absolute;
-    justify-content: center;
-    width: 830px;
-    height: 200px;
-    right: 30px;
-    top: 60px;
-  }
-  
+  background-color: black;
+  color: white;
+  position: absolute;
+  justify-content: center;
+  width: 830px;
+  height: 200px;
+  right: 30px;
+  top: 60px;
+  padding: 20px;
+}

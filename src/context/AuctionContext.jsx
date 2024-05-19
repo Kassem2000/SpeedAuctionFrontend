@@ -1,4 +1,4 @@
-import { useEffect, createContext, useState } from "react";
+import { createContext, useState } from "react";
 import axios from "axios";
 
 // create context
@@ -9,22 +9,29 @@ const AuctionProvider = ({ children }) => {
   const [displayedAuction, setDisplayedAuction] = useState([]);
   const [auctionTypeCar, setAuction] = useState([]);
 
-
   const fetchAuctionById = async (auctionId) => {
     try {
       const resAuctions = await axios.get(
         `${import.meta.env.VITE_API_URL}/auctions/${auctionId}`
       );
+
       const AuctionCar = await axios.get(
-        `${
-          import.meta.env.VITE_API_URL
-        }/auctionTypeCar/filterByAuction/${auctionId}`
+        `${import.meta.env.VITE_API_URL}/auctionTypeCar/filterByAuction/${auctionId}`
       );
 
+      const TopBid = await axios.get(
+        `${import.meta.env.VITE_API_URL}/bids/getTopBidByAuctionId/${auctionId}`
+      );
+
+      const auctionData = {
+        ...resAuctions.data,
+        topBid: TopBid.data.amount, 
+      };
+
       setAuction(AuctionCar.data[0]);
-      setDisplayedAuction(resAuctions.data);
+      setDisplayedAuction(auctionData);
     } catch (err) {
-      console.error("error: " + err); 
+      console.error("error: " + err);
     }
   };
 
@@ -43,7 +50,6 @@ const AuctionProvider = ({ children }) => {
         setAuction,
         displayedAuction,
         setDisplayedAuction,
-
         fetchAuctionById,
       }}
     >

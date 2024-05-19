@@ -20,18 +20,18 @@
   width: 660px;
   height: 600px;
   top: 100px;
-  right: 60px; /* Avstånd från högerkanten */
+  right: 60px; 
   border-radius: 15px;
   opacity: 0.9;
 }
 
 .leftBoxUpp {
   background-color: #161414;
-  position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
-  width: 1150px; /* Bredden på rutan */
-  height: 600px; /* Höjden på rutan */
-  top: 100px; /* Avstånd från överkanten */
-  left: 20px; /* Avstånd från vänsterkanten */
+  position: absolute; 
+  width: 1150px; 
+  height: 600px; 
+  top: 100px; 
+  left: 20px; 
   border-radius: 15px;
   opacity: 0.9;
 }
