@@ -6,7 +6,7 @@ import CreateAuctionPage from "./pages/CreateAuctionPage";
 import ProfilePage from "./pages/ProfilePage";
 import BidPage from "./pages/BidPage";
 import Header from "./components/Header";
-import HeroImage from "./components/HeroImage";
+import Auction from "./pages/Auction";
 import { AuthProvider } from "./context/AuthContext";
 import { CreateAuctionProvider } from "./context/CreateAuctionContext";
 
@@ -19,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/bid" element={<BidPage />} />
+            <Route path="/auctions" element={<Auction />} />
             <Route path="/createAuction" element={<CreateAuctionPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />

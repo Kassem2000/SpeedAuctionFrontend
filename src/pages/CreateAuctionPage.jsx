@@ -12,10 +12,6 @@ const CreateAuctionPage = () => {
   const { dispatch } = useContext(CreateAuctionContext);
   const navigate = useNavigate();
 
-  const [auctionvalues, setAuctionValues] = useState({
-    startingPrice: "",
-    endOfAuction: "",
-  });
   const [auctiontypevalues, setAuctionTypeValues] = useState({
     brand: "",
     carModel: "",
@@ -33,9 +29,8 @@ const CreateAuctionPage = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/createAuction",
+        "http://localhost:8080/api/auctionTypeCar",
         {
-          auctionvalues,
           auctiontypevalues,
         },
         {
@@ -62,12 +57,7 @@ const CreateAuctionPage = () => {
   const onChange = (e) => {
     const { name, value } = e.target;
 
-    if (name in auctionvalues) {
-      setAuctionValues({
-        ...auctionvalues,
-        [name]: value,
-      });
-    } else if (name in auctiontypevalues) {
+    if (name in auctiontypevalues) {
       setAuctionTypeValues({
         ...auctiontypevalues,
         [name]: value,
@@ -82,14 +72,6 @@ const CreateAuctionPage = () => {
           <div className="auctioninput">Create your auction</div>
           <form onSubmit={handleSubmit}>
             <div className="Fields">
-              <label>
-                <input
-                  type="text"
-                  name="startingPrice"
-                  placeholder="Price"
-                  onChange={onChange}
-                />
-              </label>
               <label>
                 <input
                   type="text"
@@ -140,14 +122,7 @@ const CreateAuctionPage = () => {
                   onChange={onChange}
                 />
               </label>
-              <label>
-                <input
-                  type="text"
-                  name="endOfAuction"
-                  placeholder="End Date"
-                  onChange={onChange}
-                />
-              </label>
+
               <label>
                 <input
                   type="text"
