@@ -40,6 +40,7 @@ const Thumbnail = ({ thumbnail, auctionId }) => {
     setStandardPrice();
   }, []);
 
+
   return (
     <Link className="linkAuction" to={"bid/" + thumbnail.id}>
       <img
