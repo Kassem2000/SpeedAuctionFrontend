@@ -29,12 +29,16 @@ const AuctionProvider = ({ children }) => {
         `${import.meta.env.VITE_API_URL}/bids/filterByAuctionId/${auctionId}`
       );
 
+      
+
       const auctionData = {
         ...resAuctions.data,
         topBid: TopBid.data.amount,
         bidCount: TotalBids.data.length,
         _id: auctionId,
       };
+
+      
 
       setAuction(AuctionCar.data[0]);
       setDisplayedAuction(auctionData);
