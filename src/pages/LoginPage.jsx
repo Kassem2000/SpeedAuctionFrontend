@@ -31,6 +31,9 @@ const LoginPage = () => {
         {
           username,
           password,
+        },
+        {
+          withCredentials: true,
         }
       );
 
@@ -43,7 +46,11 @@ const LoginPage = () => {
       window.localStorage.setItem("user", JSON.stringify(data));
       console.log("User logged in");
 
+<<<<<<< HEAD
       // redirect use to Profile
+=======
+      // redirect use to Home
+>>>>>>> main
       return navigate("/profile"); //redirect to profile
     } catch (err) {
       console.log("Error: " + err);

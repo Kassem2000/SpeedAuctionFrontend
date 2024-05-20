@@ -2,8 +2,8 @@ import { ThumbnailProvider } from "../context/ThumbnailContext";
 import HeroImage from "../components/HeroImage";
 import AuctionDisplayer from "../components/AuctionDisplayer";
 import "./pageCss/profilePage.css";
-import React, { useContext, useState } from "react";
-import { AuthContext } from "../context/AuthContext";
+import React, {useContext, useState} from 'react';
+import { AuthContext } from '../context/AuthContext' ;
 
 const ProfilePage = () => {
   const { state, dispatch } = useContext(AuthContext);
