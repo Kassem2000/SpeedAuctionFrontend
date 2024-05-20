@@ -17,6 +17,10 @@ const BidPage = () => {
     fetchAuctionById(id);
   }, [id]);
 
+  const user = window.localStorage.getItem("user");
+  const userContent = JSON.parse(user);
+  let userId = userContent.id;
+  console.log("This is ", userId);
   return (
     <HeroImage>
       <div className="auctionPage">

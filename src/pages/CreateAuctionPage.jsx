@@ -17,22 +17,26 @@ const CreateAuctionPage = () => {
     carModel: "",
     yearManufactured: "",
     milesDriven: "",
-    color: "",
+    color: [],
     carPng: "",
     regNumber: "",
     condition: "",
     description: "",
   });
 
+  const carAuction = window.localStorage.getItem("carAuction");
+  const carAuctionContent = JSON.parse(carAuction);
+  let carAuctionId = carAuctionContent.id;
+  console.log(carAuctionId);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(auctiontypevalues);
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/auctionTypeCar",
-        {
-          auctiontypevalues,
-        },
+        `http://localhost:8080/api/auctionTypeCar/${carAuctionId}`,
+        auctiontypevalues,
         {
           headers: {
             "Content-Type": "application/json",
@@ -44,7 +48,6 @@ const CreateAuctionPage = () => {
         type: "createAuction",
         payload: data,
       });
-      window.localStorage.setItem("auction", JSON.stringify(data));
       console.log("auction created");
       alert("created auction");
       navigate("/");
