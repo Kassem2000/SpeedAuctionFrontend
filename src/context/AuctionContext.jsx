@@ -16,9 +16,7 @@ const AuctionProvider = ({ children }) => {
       );
 
       const AuctionCar = await axios.get(
-        `${
-          import.meta.env.VITE_API_URL
-        }/auctionTypeCar/filterByAuction/${auctionId}`
+        `${import.meta.env.VITE_API_URL}/auctionTypeCar/filterByAuction/${auctionId}`
       );
 
       const TopBid = await axios.get(
@@ -26,13 +24,13 @@ const AuctionProvider = ({ children }) => {
       );
 
       const TotalBids = await axios.get(
-        `${import.meta.env.VITE_API_URL}/bids/filterByAuctionId/${auctionId}`
+        `${import.meta.env.VITE_API_URL}/bids/filterByAuctionId/${auctionId}`  
       );
 
       const auctionData = {
         ...resAuctions.data,
         topBid: TopBid.data.amount,
-        bidCount: TotalBids.data.length,
+        bidCount: TotalBids.data.length, 
       };
 
       setAuction(AuctionCar.data[0]);
@@ -42,36 +40,32 @@ const AuctionProvider = ({ children }) => {
     }
   };
 
-  const addBid = async (auctionId, bidAmount) => {
+  /* const addBid = async (auctionId) => {
     try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/bids`,
-        {
-          auctionId,
-          amount: bidAmount,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+      await axios.post(`${import.meta.env.VITE_API_URL}/bids/${auctionId}`);
+    } catch (err) {
+      console.log("Error: " + err);
+    }
+  };*/
 
-      console.log("Bid placed:", data);
-      alert("Bid placed suuccesfully");
+ /* const addBid = async (auctionId, bidAmount) => {
+    try {
+      const res = await axiosInstance.post(`/bids`, {
+        auctionId,
+        amount: bidAmount,
+      });
 
-      if (data.success) {
+
+      if (res.data.success) {
         setDisplayedAuction((prevAuction) => ({
           ...prevAuction,
           topBid: bidAmount,
         }));
       }
     } catch (err) {
-      console.log("Error placing bid: " + err);
-      alert("Bid placement failed");
+      console.log("Error: " + err);
     }
-  };
+  };*/
 
   return (
     <AuctionContext.Provider
@@ -81,7 +75,6 @@ const AuctionProvider = ({ children }) => {
         displayedAuction,
         setDisplayedAuction,
         fetchAuctionById,
-        addBid,
       }}
     >
       {children}
@@ -90,3 +83,8 @@ const AuctionProvider = ({ children }) => {
 };
 
 export { AuctionContext, AuctionProvider };
+
+  
+
+
+ 
