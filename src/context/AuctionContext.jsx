@@ -6,8 +6,8 @@ const AuctionContext = createContext();
 
 // create provider
 const AuctionProvider = ({ children }) => {
-  const [displayedAuction, setDisplayedAuction] = useState([]);
-  const [auctionTypeCar, setAuction] = useState([]);
+  const [displayedAuction, setDisplayedAuction] = useState({});
+  const [auctionTypeCar, setAuction] = useState({});
 
   const fetchAuctionById = async (auctionId) => {
     try {
@@ -16,7 +16,9 @@ const AuctionProvider = ({ children }) => {
       );
 
       const AuctionCar = await axios.get(
-        `${import.meta.env.VITE_API_URL}/auctionTypeCar/filterByAuction/${auctionId}`
+        `${
+          import.meta.env.VITE_API_URL
+        }/auctionTypeCar/filterByAuction/${auctionId}`
       );
 
       const TopBid = await axios.get(
@@ -24,13 +26,14 @@ const AuctionProvider = ({ children }) => {
       );
 
       const TotalBids = await axios.get(
-        `${import.meta.env.VITE_API_URL}/bids/filterByAuctionId/${auctionId}`  
+        `${import.meta.env.VITE_API_URL}/bids/filterByAuctionId/${auctionId}`
       );
 
       const auctionData = {
         ...resAuctions.data,
         topBid: TopBid.data.amount,
-        bidCount: TotalBids.data.length, 
+        bidCount: TotalBids.data.length,
+        _id: auctionId,
       };
 
       setAuction(AuctionCar.data[0]);
@@ -40,21 +43,23 @@ const AuctionProvider = ({ children }) => {
     }
   };
 
-  /* const addBid = async (auctionId) => {
+  const addBid = async (auctionId, bidAmount) => {
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/bids/${auctionId}`);
-    } catch (err) {
-      console.log("Error: " + err);
-    }
-  };*/
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/bids/${auctionId}`,
+        {
+          auctionId,
+          amount: bidAmount,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
 
- /* const addBid = async (auctionId, bidAmount) => {
-    try {
-      const res = await axiosInstance.post(`/bids`, {
-        auctionId,
-        amount: bidAmount,
-      });
-
+      console.log("Bid placed:", res.data);
 
       if (res.data.success) {
         setDisplayedAuction((prevAuction) => ({
@@ -63,9 +68,9 @@ const AuctionProvider = ({ children }) => {
         }));
       }
     } catch (err) {
-      console.log("Error: " + err);
+      console.log("Error placing bid: " + err);
     }
-  };*/
+  };
 
   return (
     <AuctionContext.Provider
@@ -75,6 +80,7 @@ const AuctionProvider = ({ children }) => {
         displayedAuction,
         setDisplayedAuction,
         fetchAuctionById,
+        addBid,
       }}
     >
       {children}
@@ -83,8 +89,3 @@ const AuctionProvider = ({ children }) => {
 };
 
 export { AuctionContext, AuctionProvider };
-
-  
-
-
- 
