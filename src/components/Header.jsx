@@ -1,8 +1,27 @@
-import {Link} from "react-router-dom"
-import './componentCss/header.css'
-
+import { Link } from "react-router-dom";
+import "./componentCss/header.css";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const { dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    //remove user from local storage
+    localStorage.removeItem("user");
+
+      //dispatch logout action
+  dispatch({
+    type: "LOGOUT",
+  });
+
+  navigate("/login");
+  };
+
+
+
   return (
     <header className="header">
       <div className="SpeedAuction-logo">
@@ -22,6 +41,12 @@ const Header = () => {
             </Link>
             <Link to="/signup">
               <li>Sign up</li>
+            </Link>
+            <Link to="/signup">
+              <li onClick={handleLogout}>LOGOUT </li>
+            </Link>
+            <Link to="/signup">
+            
             </Link>
           </ul>
         </nav>
