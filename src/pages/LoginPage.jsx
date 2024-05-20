@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { FaUser, FaLock } from "react-icons/fa";
 import "./pageCss/loginPage.css";
 import HeroImage from "../components/HeroImage";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -67,7 +65,7 @@ const LoginPage = () => {
               onChange={(e) => setUsername(e.target.value)}
               required
             />
-            <FaUser className="icon" />
+            
           </div>
           <div className="input-box">
             <input
@@ -77,15 +75,11 @@ const LoginPage = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <FaLock className="icon" />
+            
           </div>
           <div className="remember-forgot">
-            <label>
-              <input type="checkbox" />
-              Remember me
-            </label>
-            <Link>Forgot password</Link>
           </div>
+          <div><br /><br /><br /></div>
           <button type="submit">Login</button>
         </div>
       </form>
