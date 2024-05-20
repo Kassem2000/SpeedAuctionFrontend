@@ -12,8 +12,8 @@ import { CreateAuctionProvider } from "./context/CreateAuctionContext";
 
 function App() {
   return (
-    <CreateAuctionProvider>
-      <AuthProvider>
+    <AuthProvider>
+      <CreateAuctionProvider>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -26,8 +26,8 @@ function App() {
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </BrowserRouter>
-      </AuthProvider>
-    </CreateAuctionProvider>
+      </CreateAuctionProvider>
+    </AuthProvider>
   );
 }
 

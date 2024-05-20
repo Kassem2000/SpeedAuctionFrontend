@@ -14,7 +14,11 @@ const Auction = () => {
   const navigate = useNavigate();
 
   const [auctionvalues, setAuctionValues] = useState({
+    id: "",
+    sellerId: "",
     startingPrice: "",
+    isActive: false,
+    created_at: "",
     endOfAuction: "",
   });
   const handleSubmit = async (e) => {
@@ -22,7 +26,7 @@ const Auction = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/auctions/66437b14af78926bdebc7681",
+        "http://localhost:8080/api/auctions/65f4688b8b44c10761250775",
         auctionvalues,
 
         {
@@ -32,6 +36,7 @@ const Auction = () => {
           withCredentials: true,
         }
       );
+      console.log("ddada ", auctionvalues);
       dispatch({
         type: "createAuction",
         payload: data,
