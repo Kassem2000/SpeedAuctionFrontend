@@ -6,6 +6,10 @@ import "./pageCss/bidPage.css";
 import HeroImage from "../components/HeroImage";
 
 const BidPage = () => {
+  const user = window.localStorage.getItem("user");
+  const userContent = JSON.parse(user);
+  let userId = userContent.id;
+  console.log("ddd ", userId);
   return (
     <>
       <AuctionProvider>

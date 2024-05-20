@@ -17,7 +17,7 @@ const CreateAuctionPage = () => {
     carModel: "",
     yearManufactured: "",
     milesDriven: "",
-    color: "",
+    color: [],
     carPng: "",
     regNumber: "",
     condition: "",
@@ -27,7 +27,7 @@ const CreateAuctionPage = () => {
   const carAuction = window.localStorage.getItem("carAuction");
   const carAuctionContent = JSON.parse(carAuction);
   let carAuctionId = carAuctionContent.id;
-  console.log("åsna ", carAuctionId);
+  console.log(carAuctionId);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,9 +36,7 @@ const CreateAuctionPage = () => {
     try {
       const { data } = await axios.post(
         `http://localhost:8080/api/auctionTypeCar/${carAuctionId}`,
-        {
-          auctiontypevalues,
-        },
+        auctiontypevalues,
         {
           headers: {
             "Content-Type": "application/json",
