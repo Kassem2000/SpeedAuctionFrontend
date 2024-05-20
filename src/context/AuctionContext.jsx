@@ -72,7 +72,7 @@ const AuctionProvider = ({ children }) => {
         }));
       }
     } catch (err) {
-      console.log("Error placing bid: " + err);
+      console.log("Error: " + err);
     }
   };
 
