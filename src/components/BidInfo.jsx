@@ -11,7 +11,7 @@ const BidInfo = () => {
     if (displayedAuction._id) {
       await addBid(displayedAuction._id, bidAmount);
     } else {
-      console.error("Auction ID is missing");
+      console.error("AuctionId is missing");
     }
   };
 
