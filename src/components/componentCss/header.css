@@ -1,44 +1,57 @@
 .navWrapper {
-    display: flex;
-    margin-right: 20px;
-  }
-  
+  display: flex;
+  margin-right: 20px;
+}
+
+.header {
+  background-color: #181616;
+  color: white;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.SpeedAuction-logo {
+  width: 190px;
+}
+
+.left-logo {
+  cursor: pointer;
+  width: 100%;
+}
+
+.right-logo {
+  width: 50%;
+  margin-right: 10px;
+}
+
+.links {
+  cursor: pointer;
+  list-style: none;
+  display: inline;
+}
+
+.links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 390px) {
   .header {
-    background-color: #181616;
-    color: white;
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
+    font-size: 14px;
+    background-color: rgb(15, 15, 15);
   }
-  
-  .left-logo {
-    cursor: pointer;
-    width: 70%;
+  .SpeedAuction-logo {
+    width: 140px;
   }
-  
-  .right-logo {
-    width: 50%;
-    margin-right: 10px;
-  }
-  
-  .links {
-    cursor: pointer;
-    list-style: none;
-    display: inline;
-  }
-  
-  .links li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  .links a {
-    color: white;
-    text-decoration: none;
-  }
-  
+}

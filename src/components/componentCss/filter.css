@@ -80,3 +80,16 @@
 .dropDownMiles {
   max-width: 80px;
 }
+
+@media (max-width: 390px) {
+  .filterLabel {
+    max-width: 40px;
+  }
+  .dropdown-content {
+    max-width: 40px;
+    min-width: 40px;
+  }
+  .filterLabel h3 {
+    font-size: 15px;
+  }
+}

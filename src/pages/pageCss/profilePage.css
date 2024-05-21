@@ -58,3 +58,7 @@
 .formContainerProfile {
   max-width: 600px;
 }
+
+.formProfile {
+  gap: 50px;
+}

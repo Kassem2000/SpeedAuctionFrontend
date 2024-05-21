@@ -47,3 +47,6 @@
 .yellowStar {
   color: gold;
 }
+
+@media (max-width: 390px) {
+}

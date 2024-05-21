@@ -23,6 +23,10 @@
   margin-top: 150px;
 }
 
+.typeCarForm {
+  gap: 50px;
+}
+
 .Fields {
   display: flex;
   align-items: center;

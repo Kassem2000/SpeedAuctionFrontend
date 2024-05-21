@@ -57,39 +57,43 @@ const LoginPage = () => {
 
   return (
     <HeroImage>
-      <form onSubmit={handleSubmit}>
-        <div className="Login">
-          <h1>Login</h1>
-          <div className="input-box">
-            <input
-              type="text"
-              placeholder="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-            <FaUser className="icon" />
+      <div className="formContainer">
+        <form className="loginForm" onSubmit={handleSubmit}>
+          <div className="Login">
+            <h1>Login</h1>
+            <div className="input-box">
+              <input
+                className="inputLogin"
+                type="text"
+                placeholder="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <FaUser className="icon" />
+            </div>
+            <div className="input-box">
+              <input
+                className="inputLogin"
+                type="password"
+                placeholder="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <FaLock className="icon" />
+            </div>
+            <div className="remember-forgot">
+              <label>
+                <input type="checkbox" />
+                Remember me
+              </label>
+              <Link>Forgot password</Link>
+            </div>
+            <button type="submit">Login</button>
           </div>
-          <div className="input-box">
-            <input
-              type="password"
-              placeholder="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <FaLock className="icon" />
-          </div>
-          <div className="remember-forgot">
-            <label>
-              <input type="checkbox" />
-              Remember me
-            </label>
-            <Link>Forgot password</Link>
-          </div>
-          <button type="submit">Login</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </HeroImage>
   );
 };

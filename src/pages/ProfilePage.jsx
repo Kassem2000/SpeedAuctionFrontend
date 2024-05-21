@@ -22,7 +22,7 @@ const ProfilePage = () => {
               </div>
             </div>
             <div className="formContainerProfile">
-              <form>
+              <form className="formProfile">
                 <div>
                   <label>
                     <input type="text" name="username" placeholder="username" />

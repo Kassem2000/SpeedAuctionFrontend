@@ -7,7 +7,7 @@ const CreateAuctionPage = () => {
     <HeroImage>
       <div className="createModel">
         <div className="auctioninput"> Create your auction</div>
-        <form>
+        <form className="typeCarForm">
           <div className="Fields">
             <label>
               <input type="text" name="Brand" placeholder="Brand" />
