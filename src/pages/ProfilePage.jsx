@@ -16,6 +16,7 @@ const ProfilePage = () => {
   const userContent = JSON.parse(user);
   let userId = userContent.id;
   console.log("ddd ", userId);
+  
 
   useEffect(()=> {
     const fetchUserData  = async() => {
@@ -139,7 +140,7 @@ const ProfilePage = () => {
                       type="text"
                       name="address"
                       placeholder="address"
-                      value={formData.adress}
+                      value={formData.address}
                       onChange={handleChange}
                     />
                   </label>
