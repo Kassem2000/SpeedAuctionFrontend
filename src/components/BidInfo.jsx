@@ -14,11 +14,6 @@ const BidInfo = () => {
       console.error("AuctionId is missing");
     }
   };
-  
-  const user = window.localStorage.getItem("user");
-  const userContent = JSON.parse(user);
-  let userId = userContent.id;
-  console.log("This is ", userId);
 
   return (
     <div className="bidInfo">

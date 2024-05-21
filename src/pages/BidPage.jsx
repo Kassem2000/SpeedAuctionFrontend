@@ -5,8 +5,8 @@ import HeroImage from "../components/HeroImage";
 import Description from "../components/Description";
 import PictureBox from "../components/PictureBox";
 import BidInfo from "../components/BidInfo";
-import InfoLabel from "../components/InfoLabel"; 
-import { AuctionContext } from "../context/AuctionContext"; 
+import InfoLabel from "../components/InfoLabel";
+import { AuctionContext } from "../context/AuctionContext";
 
 const BidPage = () => {
   const { id } = useParams();
@@ -17,10 +17,6 @@ const BidPage = () => {
     fetchAuctionById(id);
   }, [id]);
 
-  const user = window.localStorage.getItem("user");
-  const userContent = JSON.parse(user);
-  let userId = userContent.id;
-  console.log("This is ", userId);
   return (
     <HeroImage>
       <div className="auctionPage">
