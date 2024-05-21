@@ -17,7 +17,7 @@ const CreateAuctionPage = () => {
     carModel: "",
     yearManufactured: "",
     milesDriven: "",
-    color: [],
+    color: "",
     carPng: "",
     regNumber: "",
     condition: "",

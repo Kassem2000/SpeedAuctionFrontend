@@ -21,18 +21,26 @@ const AuctionProvider = ({ children }) => {
         }/auctionTypeCar/filterByAuction/${auctionId}`
       );
 
-      const TopBid = await axios.get(
-        `${import.meta.env.VITE_API_URL}/bids/getTopBidByAuctionId/${auctionId}`
-      );
+      let TopBid = "";
+      let TotalBids = "";
 
-      const TotalBids = await axios.get(
-        `${import.meta.env.VITE_API_URL}/bids/filterByAuctionId/${auctionId}`
-      );
+      try {
+        TopBid = await axios.get(
+          `${
+            import.meta.env.VITE_API_URL
+          }/bids/getTopBidByAuctionId/${auctionId}`
+        );
+        TotalBids = await axios.get(
+          `${import.meta.env.VITE_API_URL}/bids/filterByAuctionId/${auctionId}`
+        );
+      } catch (err) {
+        console.error("error: " + err);
+      }
 
       const auctionData = {
         ...resAuctions.data,
-        topBid: TopBid.data.amount,
-        bidCount: TotalBids.data.length,
+        topBid: TopBid.data !== undefined ? TopBid.data.amount : 0,
+        bidCount: TopBid.data !== undefined ? TotalBids.data.length : 0,
         _id: auctionId,
       };
 
