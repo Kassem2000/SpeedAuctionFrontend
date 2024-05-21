@@ -13,9 +13,11 @@
     width: 400px;
     height: 50px;
     background-color: #161414; 
-    margin-bottom: 20px; /* Avstånd mellan rutorna */
+    margin-bottom: 20px; 
     border-radius: 10px;
     color: white;
+    padding: 10px;
+    opacity: 0.9;
   }
   
   
@@ -37,4 +39,7 @@
     background-color: #161414; 
     margin-bottom: 20px; 
     border-radius: 10px;
+    color: white;
+    padding: 10px;
+    opacity: 0.9;
   }

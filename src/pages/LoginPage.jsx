@@ -22,6 +22,8 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    window.localStorage.getItem("user");
+
     if (!username || !password) {
       alert("Fill in username and password!");
       return;
