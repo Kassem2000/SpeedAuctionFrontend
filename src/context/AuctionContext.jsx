@@ -42,6 +42,7 @@ const AuctionProvider = ({ children }) => {
       console.error("error: " + err);
     }
   };
+  
 
   const addBid = async (auctionId, bidAmount) => {
     const user = window.localStorage.getItem("user");
