@@ -3,12 +3,15 @@ import "./componentCss/pictureBox.css";
 import { AuctionContext } from "../context/AuctionContext";
 import { useContext } from "react";
 
-
 const PictureBox = () => {
-    const { auctionTypeCar } = useContext(AuctionContext);
+  const { auctionTypeCar } = useContext(AuctionContext);
   return (
-    <div className="leftBoxUpp">{auctionTypeCar.carPng}</div>
-  )
-}
+    <img
+      src={auctionTypeCar.carPng}
+      className="leftBoxUpp"
+      alt="picture of the auctioned car"
+    />
+  );
+};
 
-export default PictureBox
+export default PictureBox;
