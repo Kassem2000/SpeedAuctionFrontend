@@ -2,23 +2,45 @@ import { ThumbnailProvider } from "../context/ThumbnailContext";
 import HeroImage from "../components/HeroImage";
 import AuctionDisplayer from "../components/AuctionDisplayer";
 import "./pageCss/profilePage.css";
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { AuthContext } from '../context/AuthContext' ;
+import axios from "axios";
 
 const ProfilePage = () => {
   const { state, dispatch } = useContext(AuthContext);
   const [formData, setFormData] = useState({ ...state.user });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+
+//get the user id from the local storage!!
+  const user = window.localStorage.getItem("user");
+  const userContent = JSON.parse(user);
+  let userId = userContent.id;
+  console.log("ddd ", userId);
+
+  useEffect(()=> {
+    const fetchUserData  = async() => {
+      try{
+        const{data} = await axios.get(`http://localhost:8080/api/user/${userId}`, {
+          withCredentials: true,
+
+        });
+        setFormData(data);
+
+      }catch(err){
+        console.error("failed to fetch uder data",  err);
+
+      }
+    };
+    fetchUserData();
+  },[userId]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       //to update userdata in the backend
-      const { data } = await axios.get(
-        "http://localhost:8080/api/user/{userid}",
+      const { data } = await axios.put(
+        `http://localhost:8080/api/user/${userId}`,
 
         formData,
 
@@ -40,6 +62,10 @@ const ProfilePage = () => {
       alert("failed to update" + err.message);
     }
   };
+
+   const handleChange = (e) => {
+     setFormData({ ...formData, [e.target.name]: e.target.value });
+   };
 
   return (
     <ThumbnailProvider>
