@@ -32,9 +32,8 @@ const Header = () => {
       <div className="navWrapper">
         <nav>
           <ul className="links">
-            {state.user ? (
+            {window.localStorage.getItem("user") ? (
               <li onClick={handleLogout}>LOGOUT</li>
-              
             ) : (
               <>
                 <Link to="/login">
@@ -47,7 +46,7 @@ const Header = () => {
             )}
           </ul>
         </nav>
-        {state.user && (
+        {window.localStorage.getItem("user") && (
           <div className="Profile-log">
             <Link to="/profile">
               <img src="/Profile.png" alt="Profile" className="right-logo" />

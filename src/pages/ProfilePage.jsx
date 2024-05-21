@@ -15,7 +15,6 @@ const ProfilePage = () => {
   const user = window.localStorage.getItem("user");
   const userContent = JSON.parse(user);
   let userId = userContent.id;
-  console.log("ddd ", userId);
   
 
   useEffect(()=> {
@@ -79,7 +78,7 @@ const ProfilePage = () => {
             <div className="profilePictureWrapper">
               <div className="profilePic"></div>
               <div className="picInfo">
-                <p className="username">{formData.username}</p>
+                <p className="username">{formData.username} </p>
                 <div className="ratingProfile">
                   &#9733; &#9733; &#9733; &#9733; &#9733;
                 </div>
@@ -93,23 +92,26 @@ const ProfilePage = () => {
                       type="text"
                       name="username"
                       placeholder="username"
-                      value={formData.username || ""}
+                      required
+                      value={formData.username}
                       onChange={handleChange}
                     />
                   </label>
                   <label>
                     <input
                       type="text"
-                      name="firstName"
+                      name="first_name"
+                      required
                       placeholder="firstName"
-                      value={formData.first_name || ""}
+                      value={formData.first_name}
                       onChange={handleChange}
                     />
                   </label>
                   <label>
                     <input
                       type="text"
-                      name="lastName"
+                      required
+                      name="last_name"
                       placeholder="lastName"
                       value={formData.last_name}
                       onChange={handleChange}
@@ -118,15 +120,17 @@ const ProfilePage = () => {
                   <label>
                     <input
                       type="text"
-                      name="phoneNumber"
+                      required
+                      name="phone_number"
                       placeholder="phoneNumber"
-                      value={formData.phone_number || ""}
+                      value={formData.phone_number}
                       onChange={handleChange}
                     />
                   </label>
                   <label>
                     <input
                       type="text"
+                      required
                       name="email"
                       placeholder="email"
                       value={formData.email}
@@ -138,6 +142,7 @@ const ProfilePage = () => {
                   <label>
                     <input
                       type="text"
+                      required
                       name="address"
                       placeholder="address"
                       value={formData.address}
@@ -147,6 +152,7 @@ const ProfilePage = () => {
                   <label>
                     <input
                       type="text"
+                      required
                       name="country"
                       placeholder="country"
                       value={formData.country}
@@ -156,6 +162,7 @@ const ProfilePage = () => {
                   <label>
                     <input
                       type="text"
+                      required
                       name="city"
                       placeholder="city"
                       value={formData.city}
@@ -165,7 +172,8 @@ const ProfilePage = () => {
                   <label>
                     <input
                       type="text"
-                      name="postalCode"
+                      required
+                      name="postal_code"
                       placeholder="postal Code"
                       value={formData.postal_code}
                       onChange={handleChange}
