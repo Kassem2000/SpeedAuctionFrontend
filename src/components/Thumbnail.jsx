@@ -42,7 +42,7 @@ const Thumbnail = ({ thumbnail, auctionId }) => {
 
 
   return (
-    <Link className="linkAuction" to={"bid/" + thumbnail.id}>
+    <Link className="linkAuction" to={`/bid/${thumbnail.id}`}>
       <img
         className="thumbnailImg"
         src={imageUrl}
