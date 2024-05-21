@@ -24,6 +24,8 @@ const CreateAuctionPage = () => {
     description: "",
   });
 
+  auctiontypevalues.color = [`${auctiontypevalues.color}`];
+
   const carAuction = window.localStorage.getItem("carAuction");
   const carAuctionContent = JSON.parse(carAuction);
   let carAuctionId = carAuctionContent.id;
@@ -49,7 +51,6 @@ const CreateAuctionPage = () => {
         payload: data,
       });
       console.log("auction created");
-      alert("created auction");
       navigate("/");
     } catch (err) {
       console.log("Error " + err);

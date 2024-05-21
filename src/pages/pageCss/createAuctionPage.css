@@ -1,67 +1,89 @@
 .auctioninput {
   color: white;
   width: 269px;
-  height: 65px;
+  height: 55px;
   border-radius: 10px;
   background-color: #161414;
   text-align: center;
-  line-height: 2.5;
+  line-height: 2.1;
   font-size: 24px;
 }
-.auctioninput input[type="text"] {
+.createModel input[type="text"] {
   text-align: center;
   border: none;
   font-weight: bold;
+  height: 60px;
 }
 .createModel {
-  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   opacity: 80%;
-  margin-top: 150px;
+  margin-top: 250px;
 }
 
 .Fields {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
+.Fields input[type="text"] {
+  text-align: left;
+}
 .Fields input::placeholder {
-  font-size: 24px;
   font-weight: bold;
   padding: 10px;
   color: white;
+  text-align: center;
 }
 .Fields label {
+  width: 400px;
   margin-bottom: -20px;
 }
 
-.Fields input {
-  box-sizing: border-box;
-  width: 457px;
-  height: 60px;
-  border-radius: 10px;
-  background-color: #161414;
-  border: none;
-  font-size: 24px;
-}
-.Fields input[name="Description"] {
+.Fields input[name="description"] {
   height: 150px;
 }
 .Confirmed {
   background-color: #161414;
   color: #ffff;
   font-family: "Roboto";
-  margin: 40px;
+  margin: 10px;
   font-size: 24px;
   width: 136px;
   height: 55px;
   opacity: 80%;
+  margin-left: 40%;
 }
+
 .auctioncontainer {
-  margin-top: 300px;
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  opacity: 80%;
+  color: #ffff;
+  margin-left: 100%;
+}
+.auctioncontainer label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 457px;
+}
+.sprice input::placeholder {
+  text-align: center;
+}
+.next {
+  background-color: #161414;
+  margin-top: 30px;
+  width: 100px;
+  font-size: 24px;
+}
+.sprice input[type="text"] {
+  height: 65px;
+  border: none;
+  text-align: left;
 }
