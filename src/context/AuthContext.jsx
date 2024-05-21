@@ -13,8 +13,10 @@ const rootReducer = (state, action) => {
 
     case "LOGIN":
       return { ...state, user: action.payload };
+
     case "LOGOUT":
       return { ...state, user: null };
+      
     default:
       return state;
   }
@@ -27,11 +29,15 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(rootReducer, initialState);
 
+  //parse data before seding it  as the paload::.
   useEffect(() => {
-    dispatch({
+    const storedUser = localStorage.getItem("user");
+    if(storedUser){
+       dispatch({
       type: "LOGIN",
-      payload: JSON.stringify(window.localStorage.getItem("user")),
+      payload: JSON.parse(storedUser),
     });
+    }
   }, []);
 
   return (

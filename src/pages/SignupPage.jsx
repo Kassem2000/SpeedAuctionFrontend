@@ -161,14 +161,12 @@ const SignupPage = () => {
         type: "SIGNUP",
         payload: data,
       });
-      window.localStorage.setItem("user", JSON.stringify(data));
       console.log("Succesfull");
       alert("Registration Succesfull");
-
-      return navigate("/");
+      return navigate("/login");
     } catch (err) {
       console.error("ERROR:" + err);
-      alert("Registration Failled");
+      alert("Registration Failled")
     }
   };
 
