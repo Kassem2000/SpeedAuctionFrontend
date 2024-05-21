@@ -44,9 +44,13 @@ const AuctionProvider = ({ children }) => {
   };
 
   const addBid = async (auctionId, bidAmount) => {
+    const user = window.localStorage.getItem("user");
+    const userContent = JSON.parse(user);
+    let userId = userContent.id;
+    console.log("userId: ", userId);
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/bids/${auctionId}`,
+        `${import.meta.env.VITE_API_URL}/bids/${auctionId}/${userId}`,
         {
           auctionId,
           amount: bidAmount,
