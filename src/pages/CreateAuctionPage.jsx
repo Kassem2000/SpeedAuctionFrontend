@@ -17,12 +17,14 @@ const CreateAuctionPage = () => {
     carModel: "",
     yearManufactured: "",
     milesDriven: "",
-    color: [],
+    color: "",
     carPng: "",
     regNumber: "",
     condition: "",
     description: "",
   });
+
+  auctiontypevalues.color = [`${auctiontypevalues.color}`];
 
   const carAuction = window.localStorage.getItem("carAuction");
   const carAuctionContent = JSON.parse(carAuction);
@@ -49,7 +51,6 @@ const CreateAuctionPage = () => {
         payload: data,
       });
       console.log("auction created");
-      alert("created auction");
       navigate("/");
     } catch (err) {
       console.log("Error " + err);

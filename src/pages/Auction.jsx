@@ -21,7 +21,6 @@ const Auction = () => {
     created_at: "",
     endOfAuction: "",
   });
-  /* localstorage */
   const user = window.localStorage.getItem("user");
   const userContent = JSON.parse(user);
   let userId = userContent.id;
@@ -29,7 +28,7 @@ const Auction = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("hej");
+
     try {
       const { data } = await axios.post(
         `http://localhost:8080/api/auctions/${userId}`,
@@ -48,9 +47,7 @@ const Auction = () => {
         payload: data,
       });
       window.localStorage.setItem("carAuction", JSON.stringify(data));
-
       console.log("auction created");
-      alert("created auction");
       return navigate("/createAuction");
     } catch (err) {
       console.log("Error " + err);
