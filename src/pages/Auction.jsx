@@ -21,15 +21,15 @@ const Auction = () => {
     created_at: "",
     endOfAuction: "",
   });
-
+  /* localstorage */
   const user = window.localStorage.getItem("user");
   const userContent = JSON.parse(user);
   let userId = userContent.id;
-  console.log("ddd ", userId);
+  console.log("dd ", userId);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("hej");
     try {
       const { data } = await axios.post(
         `http://localhost:8080/api/auctions/${userId}`,
