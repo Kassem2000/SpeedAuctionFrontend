@@ -72,9 +72,11 @@ const CreateAuctionPage = () => {
   return (
     <CreateAuctionProvider>
       <HeroImage>
-        <div className="createModel">
+        <div className="auctioninputContainer">
           <div className="auctioninput">Create your auction</div>
-          <form onSubmit={handleSubmit}>
+        </div>
+        <div className="createModel">
+          <form className="formAuctionTypeCar" onSubmit={handleSubmit}>
             <div className="Fields">
               <label>
                 <input
@@ -144,7 +146,10 @@ const CreateAuctionPage = () => {
                 />
               </label>
               <label>
-                <input
+                <textarea
+                  className="inputDescription"
+                  rows="10"
+                  cols="30"
                   type="text"
                   name="description"
                   placeholder="Description"
@@ -152,7 +157,7 @@ const CreateAuctionPage = () => {
                 />
               </label>
             </div>
-            <button type="submit" className="Confirmed">
+            <button type="submit" className="Confirmed next">
               CONFIRM
             </button>
           </form>
