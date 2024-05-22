@@ -54,40 +54,42 @@ const LoginPage = () => {
       console.log("Error: " + err);
       alert("Login failed: " + err.message);
     }
- 
   };
 
   return (
     <HeroImage>
-      <form onSubmit={handleSubmit}>
-        <div className="Login">
-          <h1>Login</h1>
-          <div className="input-box">
-            <input
-              type="text"
-              placeholder="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-            
+      <div className="formContainer">
+        <form className="loginForm" onSubmit={handleSubmit}>
+          <div className="Login">
+            <h1>Login</h1>
+            <div className="input-box">
+              <input
+                type="text"
+                placeholder="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input-box">
+              <input
+                type="password"
+                placeholder="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="remember-forgot"></div>
+            <div>
+              <br />
+              <br />
+              <br />
+            </div>
+            <button type="submit">Login</button>
           </div>
-          <div className="input-box">
-            <input
-              type="password"
-              placeholder="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            
-          </div>
-          <div className="remember-forgot">
-          </div>
-          <div><br /><br /><br /></div>
-          <button type="submit">Login</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </HeroImage>
   );
 };

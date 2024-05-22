@@ -2,6 +2,15 @@
   background-color: #131212;
 }
 
+.mobileFilter {
+  display: none;
+}
+
+#displayFilterButton,
+#hideFilterButton {
+  display: none;
+}
+
 .heroHome {
   width: auto;
   height: 618px;
@@ -39,4 +48,33 @@
 .createAuctionButton h3 {
   color: white;
   font-size: 24px;
+}
+
+@media (max-width: 390px) {
+  .heroHome {
+    height: 230px;
+  }
+  .createAuctionButton {
+    width: 120px;
+    height: 35px;
+    margin: 10px;
+    margin-top: 60px;
+    opacity: 100%;
+  }
+  .createAuctionButton h3 {
+    font-size: 16px;
+  }
+  .desktopFilter {
+    display: none;
+  }
+  #displayFilterButton,
+  #hideFilterButton {
+    display: initial;
+    margin: 10px;
+    width: 120px;
+    height: 50px;
+    background-color: #131212;
+  }
+  .mobileFilter {
+  }
 }

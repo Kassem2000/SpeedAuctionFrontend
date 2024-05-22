@@ -162,20 +162,22 @@ const Filter = ({ setFilteredAuctions }) => {
           <div className="textCont">
             <h3>Year</h3>
           </div>
-          <select
-            className="dropdown-content"
-            id="year"
-            name="year"
-            value={carYear}
-            onChange={handleYearChange}
-          >
-            <option value="noFilter">No filter</option>
-            {yearList.split("\n").map((year, index) => (
-              <option key={index} value={year}>
-                {year}
-              </option>
-            ))}
-          </select>
+          <div className="yearContainer">
+            <select
+              className="dropdown-content"
+              id="year"
+              name="year"
+              value={carYear}
+              onChange={handleYearChange}
+            >
+              <option value="noFilter">No filter</option>
+              {yearList.split("\n").map((year, index) => (
+                <option key={index} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
         <div className="filterLabel">
           <div className="textCont">

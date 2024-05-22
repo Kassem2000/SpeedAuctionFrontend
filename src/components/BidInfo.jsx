@@ -18,15 +18,16 @@ const BidInfo = () => {
   return (
     <div className="bidInfo">
       <h2 className="created">Created: {displayedAuction.created_at}</h2>
-      <label>
+      <label className="bidLabel">
         <h2 className="box1">
-          Starting bid: {displayedAuction.startingPrice} kr
+          {" "}
+          Starting bid: {displayedAuction.startingPrice} kr{" "}
         </h2>
       </label>
-      <label>
+      <label className="bidLabel">
         <h2 className="box2">Top bid: {displayedAuction.topBid} kr</h2>
       </label>
-      <label>
+      <label className="bidLabel">
         <h2 className="box3">
           Bid amount:
           <input
@@ -36,7 +37,7 @@ const BidInfo = () => {
           />
         </h2>
       </label>
-      <label>
+      <label className="bidLabel">
         <h2 className="box4">Auction ends: {displayedAuction.endOfAuction}</h2>
       </label>
       <button className="grenClick" onClick={handleBidSubmit}>

@@ -2,38 +2,35 @@ import { ThumbnailProvider } from "../context/ThumbnailContext";
 import HeroImage from "../components/HeroImage";
 import AuctionDisplayer from "../components/AuctionDisplayer";
 import "./pageCss/profilePage.css";
-import React, {useContext, useEffect, useState} from 'react';
-import { AuthContext } from '../context/AuthContext' ;
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 
 const ProfilePage = () => {
   const { state, dispatch } = useContext(AuthContext);
   const [formData, setFormData] = useState({ ...state.user });
 
-
-//get the user id from the local storage!!
+  //get the user id from the local storage!!
   const user = window.localStorage.getItem("user");
   const userContent = JSON.parse(user);
   let userId = userContent.id;
-  
 
-  useEffect(()=> {
-    const fetchUserData  = async() => {
-      try{
-        const{data} = await axios.get(`http://localhost:8080/api/user/${userId}`, {
-          withCredentials: true,
-
-        });
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:8080/api/user/${userId}`,
+          {
+            withCredentials: true,
+          }
+        );
         setFormData(data);
-
-      }catch(err){
-        console.error("failed to fetch uder data",  err);
-
+      } catch (err) {
+        console.error("failed to fetch uder data", err);
       }
     };
     fetchUserData();
-  },[userId]);
-
+  }, [userId]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,9 +60,9 @@ const ProfilePage = () => {
     }
   };
 
-   const handleChange = (e) => {
-     setFormData({ ...formData, [e.target.name]: e.target.value });
-   };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
     <ThumbnailProvider>
@@ -85,7 +82,7 @@ const ProfilePage = () => {
               </div>
             </div>
             <div className="formContainerProfile">
-              <form onSubmit={handleSubmit} className="formContainer">
+              <form onSubmit={handleSubmit} className="formProfile">
                 <div>
                   <label>
                     <input

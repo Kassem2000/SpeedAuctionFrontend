@@ -1,11 +1,16 @@
 .leftBoxUpp {
-    background-color: #181616;
-    color: white;
-    font-size: 50px;
-    position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
-    width: 1150px; /* Bredden på rutan */
-    height: 600px; /* Höjden på rutan */
-    top: 100px; /* Avstånd från överkanten */
-    left: 20px; /* Avstånd från vänsterkanten */
-    border-radius: 15px;
+  background-color: #181616;
+  color: white;
+  font-size: 50px;
+  position: absolute; /* Så att rutan inte flyttar på sig oavsett skärmstorlek*/
+  height: 600px;
+  top: 100px; /* Avstånd från överkanten */
+  left: 20px; /* Avstånd från vänsterkanten */
+  border-radius: 15px;
+}
+
+@media (max-width: 390px) {
+  .leftBoxUpp {
+    height: 190px;
   }
+}

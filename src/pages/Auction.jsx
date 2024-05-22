@@ -61,30 +61,32 @@ const Auction = () => {
   return (
     <CreateAuctionProvider>
       <HeroImage>
-        <form onSubmit={handleSubmit}>
-          <div className="auctioncontainer">
-            <label className="sprice">
-              <input
-                type="text"
-                name="startingPrice"
-                placeholder="Price"
-                onChange={onChange}
-              />
-            </label>
-            <label className="sprice">
-              <input
-                type="text"
-                name="endOfAuction"
-                placeholder="End Date"
-                onChange={onChange}
-              />
-            </label>
+        <div className="createModel auctionCreate">
+          <form className="auctionForm" onSubmit={handleSubmit}>
+            <div className="auctioncontainer">
+              <label className="sprice">
+                <input
+                  type="text"
+                  name="startingPrice"
+                  placeholder="Price"
+                  onChange={onChange}
+                />
+              </label>
+              <label className="sprice">
+                <input
+                  type="text"
+                  name="endOfAuction"
+                  placeholder="End Date"
+                  onChange={onChange}
+                />
+              </label>
 
-            <button type="submit" className="next">
-              Next
-            </button>
-          </div>
-        </form>
+              <button type="submit" className="next">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
       </HeroImage>
     </CreateAuctionProvider>
   );

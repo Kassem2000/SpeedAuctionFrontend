@@ -21,7 +21,7 @@ const BidPage = () => {
     <HeroImage>
       <div className="auctionPage">
         <div className="upperBoxes">
-          <PictureBox />
+          <PictureBox className="leftBoxUp" />
           <div className="rightBoxUpp">
             <BidInfo />
           </div>
