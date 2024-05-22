@@ -56,7 +56,9 @@
   opacity: 80%;
   margin-left: 40%;
 }
-
+input {
+  margin-top: 5px;
+}
 .auctioncontainer {
   display: flex;
   flex-direction: column;
@@ -78,7 +80,7 @@
 }
 .next {
   background-color: #161414;
-  margin-top: 30px;
+  margin-top: 20px;
   width: 100px;
   font-size: 24px;
 }
@@ -86,4 +88,13 @@
   height: 65px;
   border: none;
   text-align: left;
+}
+select {
+  background-color: #161414;
+  width: 457px;
+  height: 55px;
+  color: #ffff;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
 }

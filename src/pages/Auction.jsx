@@ -21,6 +21,12 @@ const Auction = () => {
     created_at: "",
     endOfAuction: "",
   });
+  const [timevalues, setTimeValues] = useState({
+    year: "",
+    month: "",
+    day: "",
+  });
+
   const user = window.localStorage.getItem("user");
   const userContent = JSON.parse(user);
   let userId = userContent.id;
@@ -55,8 +61,45 @@ const Auction = () => {
     }
   };
   const onChange = (e) => {
-    setAuctionValues({ ...auctionvalues, [e.target.name]: e.target.value });
+    console.log("yoo", timevalues);
+    setTimeValues({ ...timevalues, [e.target.name]: e.target.value });
+    let timecombined =
+      timevalues.year + "-" + timevalues.month + "-" + timevalues.day;
+    console.log("hee", timevalues);
+    auctionvalues.endOfAuction = timecombined;
+
+    setAuctionValues({
+      ...auctionvalues,
+      [e.target.name]: e.target.value,
+      endOfAuction: timecombined,
+    });
+    console.log("mittfel", timevalues);
+    console.log(auctionvalues);
   };
+
+  const yearOptions = [];
+
+  for (let year = 2030; year >= 2024; year--) {
+    yearOptions.push(`${year}`);
+  }
+
+  const yearList = yearOptions.join("\n");
+
+  const monthOptions = [];
+
+  for (let month = 1; month <= 12; month++) {
+    monthOptions.push(`${month}`);
+  }
+
+  const monthList = monthOptions.join("\n");
+
+  const dayOptions = [];
+
+  for (let day = 1; day <= 31; day++) {
+    dayOptions.push(`${day}`);
+  }
+
+  const dayList = dayOptions.join("\n");
 
   return (
     <CreateAuctionProvider>
@@ -72,12 +115,47 @@ const Auction = () => {
               />
             </label>
             <label className="sprice">
-              <input
+              <select
                 type="text"
-                name="endOfAuction"
-                placeholder="End Date"
+                name="year"
+                placeholder="Year"
                 onChange={onChange}
-              />
+              >
+                {" "}
+                {yearList.split("\n").map((year, index) => (
+                  <option key={index} value={year}>
+                    {year}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="sprice">
+              <select
+                type="text"
+                name="month"
+                placeholder="Month"
+                onChange={onChange}
+              >
+                {monthList.split("\n").map((month, index) => (
+                  <option key={index} value={month}>
+                    {month}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="sprice">
+              <select
+                type="text"
+                name="day"
+                placeholder="Day"
+                onChange={onChange}
+              >
+                {dayList.split("\n").map((day, index) => (
+                  <option key={index} value={day}>
+                    {day}
+                  </option>
+                ))}
+              </select>
             </label>
 
             <button type="submit" className="next">
