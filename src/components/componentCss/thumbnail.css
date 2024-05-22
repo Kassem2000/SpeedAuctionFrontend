@@ -4,6 +4,8 @@
   border-radius: 20px;
   display: flex;
   flex-grow: 1;
+  max-width: 480px;
+  min-width: 250px;
 }
 
 .linkAuction:hover {
@@ -12,8 +14,6 @@
 
 .thumbnailImg {
   background: gray;
-  min-width: 300px;
-  max-width: 550px;
   height: 230px;
   border-radius: 20px;
   display: flex;

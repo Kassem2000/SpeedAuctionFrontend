@@ -82,7 +82,7 @@ const ProfilePage = () => {
               </div>
             </div>
             <div className="formContainerProfile">
-              <form onSubmit={handleSubmit} className="formContainer">
+              <form onSubmit={handleSubmit} className="formProfile">
                 <div>
                   <label>
                     <input
