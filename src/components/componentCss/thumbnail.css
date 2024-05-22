@@ -49,4 +49,25 @@
 }
 
 @media (max-width: 390px) {
+  .linkAuction {
+    max-width: 200px;
+    min-width: 120px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  .thumbnailImg {
+    height: 80px;
+    border-radius: 10px;
+  }
+  .elementContainerThumb {
+    margin-left: 10px;
+    height: 80px;
+  }
+  .thumbnailCost {
+    font-size: 16px;
+  }
+  .thumbnailRating {
+    font-size: 24px;
+  }
 }

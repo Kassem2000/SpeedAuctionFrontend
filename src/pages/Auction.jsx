@@ -61,7 +61,7 @@ const Auction = () => {
   return (
     <CreateAuctionProvider>
       <HeroImage>
-        <div className="createModel">
+        <div className="createModel auctionCreate">
           <form className="auctionForm" onSubmit={handleSubmit}>
             <div className="auctioncontainer">
               <label className="sprice">
