@@ -58,3 +58,31 @@
 .formContainerProfile {
   max-width: 600px;
 }
+
+.formProfile {
+  gap: 50px;
+  padding: 10px;
+}
+
+@media (max-width: 390px) {
+  .leftsideProfile {
+    display: none;
+  }
+  .rightsideProfile {
+    flex-direction: column;
+  }
+  .profilePictureWrapper {
+    margin: 10px;
+    position: relative;
+    left: 0px;
+    color: white;
+  }
+  .profilePic {
+    width: 128px;
+    height: 128px;
+  }
+  .formProfile {
+    gap: 20px;
+    padding: 10px;
+  }
+}

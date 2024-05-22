@@ -36,6 +36,20 @@ const Auction = () => {
     e.preventDefault();
 
     try {
+      if (timevalues.month <= 9) {
+        timevalues.month = "0" + timevalues.month;
+      }
+      if (timevalues.day <= 9) {
+        timevalues.day = "0" + timevalues.day;
+      }
+      let timecombined =
+        timevalues.year + "-" + timevalues.month + "-" + timevalues.day;
+      auctionvalues.endOfAuction = timecombined;
+
+      setAuctionValues({
+        ...auctionvalues,
+        endOfAuction: timecombined,
+      });
       const { data } = await axios.post(
         `http://localhost:8080/api/auctions/${userId}`,
         auctionvalues,

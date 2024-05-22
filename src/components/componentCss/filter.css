@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.mobileFilter {
+  display: none;
+}
+
 .filterBy {
   display: flex;
   justify-content: space-evenly;
@@ -79,4 +83,40 @@
 
 .dropDownMiles {
   max-width: 80px;
+}
+
+@media (max-width: 390px) {
+  .filterWrapper {
+    height: 300px;
+    opacity: 60%;
+    flex-wrap: wrap;
+  }
+  .filterBy {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .filterLabel {
+    max-width: 300px;
+    margin: 5px;
+    margin-bottom: 30px;
+  }
+  .yearContainer {
+    max-height: 200px;
+    overflow: hidden;
+  }
+  .dropdown-content {
+    max-width: 300px;
+    min-width: 40px;
+    box-shadow: none;
+  }
+  .dropdown-content option {
+    max-height: 100px;
+  }
+  .filterLabel h3 {
+    font-size: 15px;
+  }
+  .filterButton {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
 }

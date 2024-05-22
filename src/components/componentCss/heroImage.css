@@ -4,3 +4,9 @@
   background-size: cover;
   padding-top: 1px;
 }
+
+@media (max-width: 390px) {
+  .heroImage {
+    background: none;
+  }
+}

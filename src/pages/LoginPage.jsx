@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { FaUser, FaLock } from "react-icons/fa";
 import "./pageCss/loginPage.css";
 import HeroImage from "../components/HeroImage";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +29,7 @@ const LoginPage = () => {
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/auth/signing`,
+        "http://localhost:8080/api/auth/signing",
         {
           username,
           password,
@@ -50,48 +48,48 @@ const LoginPage = () => {
       window.localStorage.setItem("user", JSON.stringify(data));
       console.log("User logged in");
 
-      // redirect use to Home
-      return navigate("/");
+      // redirect use to Profile
+      return navigate("/profile"); //redirect to profile
     } catch (err) {
       console.log("Error: " + err);
+      alert("Login failed: " + err.message);
     }
   };
 
   return (
     <HeroImage>
-      <form onSubmit={handleSubmit}>
-        <div className="Login">
-          <h1>Login</h1>
-          <div className="input-box">
-            <input
-              type="text"
-              placeholder="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-            <FaUser className="icon" />
+      <div className="formContainer">
+        <form className="loginForm" onSubmit={handleSubmit}>
+          <div className="Login">
+            <h1>Login</h1>
+            <div className="input-box">
+              <input
+                type="text"
+                placeholder="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input-box">
+              <input
+                type="password"
+                placeholder="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="remember-forgot"></div>
+            <div>
+              <br />
+              <br />
+              <br />
+            </div>
+            <button type="submit">Login</button>
           </div>
-          <div className="input-box">
-            <input
-              type="password"
-              placeholder="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <FaLock className="icon" />
-          </div>
-          <div className="remember-forgot">
-            <label>
-              <input type="checkbox" />
-              Remember me
-            </label>
-            <Link>Forgot password</Link>
-          </div>
-          <button type="submit">Login</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </HeroImage>
   );
 };
