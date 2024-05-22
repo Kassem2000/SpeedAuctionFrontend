@@ -1,54 +1,164 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./pageCss/createAuctionPage.css";
 import HeroImage from "../components/HeroImage";
+import {
+  CreateAuctionContext,
+  CreateAuctionProvider,
+} from "../context/CreateAuctionContext";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const CreateAuctionPage = () => {
+  const { dispatch } = useContext(CreateAuctionContext);
+  const navigate = useNavigate();
+
+  const [auctiontypevalues, setAuctionTypeValues] = useState({
+    brand: "",
+    carModel: "",
+    yearManufactured: "",
+    milesDriven: "",
+    color: "",
+    carPng: "",
+    regNumber: "",
+    condition: "",
+    description: "",
+  });
+
+  auctiontypevalues.color = [`${auctiontypevalues.color}`];
+
+  const carAuction = window.localStorage.getItem("carAuction");
+  const carAuctionContent = JSON.parse(carAuction);
+  let carAuctionId = carAuctionContent.id;
+  console.log(carAuctionId);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(auctiontypevalues);
+
+    try {
+      const { data } = await axios.post(
+        `http://localhost:8080/api/auctionTypeCar/${carAuctionId}`,
+        auctiontypevalues,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+      dispatch({
+        type: "createAuction",
+        payload: data,
+      });
+      console.log("auction created");
+      navigate("/");
+    } catch (err) {
+      console.log("Error " + err);
+      alert("creation failed");
+    }
+  };
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name in auctiontypevalues) {
+      setAuctionTypeValues({
+        ...auctiontypevalues,
+        [name]: value,
+      });
+    }
+  };
+
   return (
-    <HeroImage>
-      <div className="createModel">
-        <div className="auctioninput"> Create your auction</div>
-        <form className="typeCarForm">
-          <div className="Fields">
-            <label>
-              <input type="text" name="Brand" placeholder="Brand" />
-            </label>
-            <label>
-              <input type="text" name="Model" placeholder="Model" />
-            </label>
-            <label>
-              <input type="text" name="Year" placeholder="Year" />
-            </label>
-            <label>
-              <input type="text" name="Miles" placeholder="Miles" />
-            </label>
-            <label>
-              <input type="text" name="Color" placeholder="Color" />
-            </label>
-          </div>
-          <div className="Fields">
-            <label>
-              <input
-                type="text"
-                name="License plate"
-                placeholder="License plate"
-              />
-            </label>
-            <label>
-              <input type="text" name="Condition" placeholder="Condition" />
-            </label>
-            <label>
-              <input type="text" name="PNG" placeholder="PNG" />
-            </label>
-            <label>
-              <input type="text" name="Description" placeholder="Description" />
-            </label>
-          </div>
-        </form>
-        <button type="Confirm" className="Confirmed">
-          CONFIRM
-        </button>
-      </div>
-    </HeroImage>
+    <CreateAuctionProvider>
+      <HeroImage>
+        <div className="createModel">
+          <div className="auctioninput">Create your auction</div>
+          <form onSubmit={handleSubmit}>
+            <div className="Fields">
+              <label>
+                <input
+                  type="text"
+                  name="brand"
+                  placeholder="Brand"
+                  onChange={onChange}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
+                  name="carModel"
+                  placeholder="Model"
+                  onChange={onChange}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
+                  name="yearManufactured"
+                  placeholder="Year"
+                  onChange={onChange}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
+                  name="milesDriven"
+                  placeholder="Miles"
+                  onChange={onChange}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
+                  name="color"
+                  placeholder="Color"
+                  onChange={onChange}
+                />
+              </label>
+            </div>
+            <div className="Fields">
+              <label>
+                <input
+                  type="text"
+                  name="regNumber"
+                  placeholder="License plate"
+                  onChange={onChange}
+                />
+              </label>
+
+              <label>
+                <input
+                  type="text"
+                  name="condition"
+                  placeholder="Condition"
+                  onChange={onChange}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
+                  name="carPng"
+                  placeholder="PNG"
+                  onChange={onChange}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
+                  name="description"
+                  placeholder="Description"
+                  onChange={onChange}
+                />
+              </label>
+            </div>
+            <button type="submit" className="Confirmed">
+              CONFIRM
+            </button>
+          </form>
+        </div>
+      </HeroImage>
+    </CreateAuctionProvider>
   );
 };
 

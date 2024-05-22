@@ -1,0 +1,46 @@
+.bidInfo {
+  color: white;
+  padding: 15px;
+}
+
+.created,
+.box1 {
+  margin-bottom: 20px;
+}
+
+.box1,
+.box2,
+.box3,
+.box4 {
+  margin-bottom: 20px;
+  background-color: #000000;
+  width: 400px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  opacity: 0.8;
+}
+
+.box4 {
+  background-color: #8d0000;
+  color: #000000;
+  height: 80px;
+}
+
+.grenClick {
+  background-color: #1f4910;
+  width: 150px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+input[type="number"] {
+  background-color: #D9D9D9;
+  color: #161414;
+  width: 200px;
+  height: 40px;
+  font-size: 30px;
+  margin-top: -30px;
+  margin-left: 20px;
+}

@@ -1,8 +1,23 @@
-import {Link} from "react-router-dom"
-import './componentCss/header.css'
-
+import { Link } from "react-router-dom";
+import "./componentCss/header.css";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const { state, dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    //remove user from local storage
+    localStorage.removeItem("user");
+    //dispatch logout action
+    dispatch({
+      type: "LOGOUT",
+    });
+    navigate("/login");
+  };
+
   return (
     <header className="header">
       <div className="SpeedAuction-logo">
@@ -17,19 +32,27 @@ const Header = () => {
       <div className="navWrapper">
         <nav>
           <ul className="links">
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
-            <Link to="/signup">
-              <li>Sign up</li>
-            </Link>
+            {window.localStorage.getItem("user") ? (
+              <li onClick={handleLogout}>LOGOUT</li>
+            ) : (
+              <>
+                <Link to="/login">
+                  <li>Login</li>
+                </Link>
+                <Link to="/signup">
+                  <li>Sign up</li>
+                </Link>
+              </>
+            )}
           </ul>
         </nav>
-        <div className="Profile-log">
-          <Link to="/profile">
-            <img src="/Profile.png" alt="Profile" className="right-logo" />
-          </Link>
-        </div>
+        {window.localStorage.getItem("user") && (
+          <div className="Profile-log">
+            <Link to="/profile">
+              <img src="/Profile.png" alt="Profile" className="right-logo" />
+            </Link>
+          </div>
+        )}
       </div>
     </header>
   );

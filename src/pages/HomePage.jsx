@@ -16,7 +16,7 @@ const HomePage = () => {
     <>
       <ThumbnailProvider>
         <div className="heroHome">
-          <Link to="/createAuction" className="linkCreateAuction">
+          <Link to="/auctions" className="linkCreateAuction">
             <button className="createAuctionButton">
               <h3>Create Auction</h3>
             </button>
