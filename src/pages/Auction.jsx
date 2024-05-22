@@ -121,7 +121,7 @@ const Auction = () => {
                 placeholder="Year"
                 onChange={onChange}
               >
-                {" "}
+                <option>Year</option>
                 {yearList.split("\n").map((year, index) => (
                   <option key={index} value={year}>
                     {year}
@@ -136,6 +136,7 @@ const Auction = () => {
                 placeholder="Month"
                 onChange={onChange}
               >
+                <option>Month</option>
                 {monthList.split("\n").map((month, index) => (
                   <option key={index} value={month}>
                     {month}
@@ -150,6 +151,7 @@ const Auction = () => {
                 placeholder="Day"
                 onChange={onChange}
               >
+                <option>Day</option>
                 {dayList.split("\n").map((day, index) => (
                   <option key={index} value={day}>
                     {day}
