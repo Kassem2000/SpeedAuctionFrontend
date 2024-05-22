@@ -9,10 +9,10 @@ const InfoLabel = () => {
     <>
       <div className="label-left">
         <label>
-          <h2 className="label1-1">Model: {auctionTypeCar.carModel}</h2>
+          <h2 className="label1-1">Brand: {auctionTypeCar.brand}</h2>
         </label>
         <label>
-          <h2 className="label1-2">Brand: {auctionTypeCar.brand}</h2>
+          <h2 className="label1-2">Model: {auctionTypeCar.carModel}</h2>
         </label>
         <label>
           <h2 className="label1-3">
