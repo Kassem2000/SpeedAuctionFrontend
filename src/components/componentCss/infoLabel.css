@@ -39,4 +39,19 @@
 }
 
 @media (max-width: 390px) {
+  .label1-1,
+  .label1-2,
+  .label1-3,
+  .label1-4,
+  .label2-1,
+  .label2-2,
+  .label2-3,
+  .label2-4 {
+    width: 140px;
+    border-radius: 0px;
+    height: auto;
+    max-height: 100px;
+    overflow: scroll;
+    background-color: black;
+  }
 }

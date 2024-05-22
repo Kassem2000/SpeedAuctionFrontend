@@ -20,20 +20,13 @@
   width: 660px;
   height: 600px;
   top: 100px;
-  right: 60px; 
+  right: 60px;
   border-radius: 15px;
   opacity: 0.9;
 }
 
 .leftBoxUpp {
-  background-color: #161414;
-  position: absolute; 
-  width: 1150px; 
-  height: 600px; 
-  top: 100px; 
-  left: 20px; 
-  border-radius: 15px;
-  opacity: 0.9;
+  aspect-ratio: 16/9;
 }
 
 .lowerBoxes {
@@ -67,4 +60,38 @@
   top: 720px;
   left: 20px;
   border-radius: 10px;
+}
+
+@media (max-width: 390px) {
+  .rightBoxUpp {
+    background-color: #161414;
+    position: absolute;
+    width: 340px;
+    height: 500px;
+    top: 330px;
+    right: 30px;
+    border-radius: 15px;
+    opacity: 0.9;
+  }
+  .rightBoxDown {
+    background-color: #161414;
+    position: absolute;
+    width: 340px;
+    height: 300px;
+    top: 870px;
+    right: 30px;
+    border-radius: 10px;
+    opacity: 0.9;
+  }
+  .leftBoxDown {
+    position: absolute;
+    width: 340px;
+    height: 300px;
+    top: 1200px;
+    left: 20px;
+    border-radius: 10px;
+  }
+  .description-title {
+    display: none;
+  }
 }
