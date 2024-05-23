@@ -9,6 +9,7 @@
 }
 
 .upperBoxes {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
@@ -19,17 +20,23 @@
   position: absolute;
   width: 660px;
   height: 600px;
-  top: 100px;
-  right: 60px;
+  top: -50px;
+  left: 270px;
   border-radius: 15px;
   opacity: 0.9;
 }
 
 .leftBoxUpp {
-  aspect-ratio: 16/9;
+  justify-content: left;
+  margin-left: -950px;
+  margin-top: -150px;
+  width: 1160px;
+  border-radius: 15px;
+  opacity: 0.9;
 }
 
 .lowerBoxes {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: -350px;
@@ -38,10 +45,10 @@
 .rightBoxDown {
   background-color: #161414;
   position: absolute;
-  width: 900px;
-  height: 300px;
-  top: 720px;
-  right: 60px;
+  width: 990px;
+  height: 350px;
+  top: 570px;
+  left: -50px;
   border-radius: 10px;
   opacity: 0.9;
 }
@@ -57,8 +64,8 @@
   position: absolute;
   width: 900px;
   height: 300px;
-  top: 720px;
-  left: 20px;
+  top: 560px;
+  right: 70px;
   border-radius: 10px;
 }
 
