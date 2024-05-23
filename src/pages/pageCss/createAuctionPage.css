@@ -7,6 +7,15 @@
   justify-content: center;
 }
 
+.formAuctionPage {
+  width: 100%;
+  display: flex;
+  height: 800px;
+  align-items: center;
+  justify-content: center;
+  opacity: 80%;
+}
+
 .auctioninput {
   color: white;
   width: 269px;
@@ -29,7 +38,7 @@
   align-items: center;
   justify-content: center;
   opacity: 80%;
-  margin-top: 50pxpx;
+  margin-top: 50px;
 }
 
 .auctionForm {
@@ -99,7 +108,7 @@
   border: none;
   text-align: left;
 }
-select {
+.selectAuctionPage {
   background-color: #161414;
   width: 457px;
   height: 55px;
@@ -107,4 +116,38 @@ select {
   margin: 10px;
   border: none;
   border-radius: 10px;
+}
+.inputDescription {
+  height: 150px;
+}
+
+@media (max-width: 390px) {
+  .formAuctionPage {
+    width: 100%;
+    display: flex;
+    height: 800px;
+    align-items: center;
+    justify-content: center;
+    opacity: 80%;
+  }
+  .next,
+  .auctioninput {
+    background-color: black;
+  }
+  .auctioncontainer label {
+    width: 250px;
+  }
+  .Fields label {
+    width: 150px;
+  }
+  .selectAuctionPage {
+    background-color: black;
+    width: 250px;
+  }
+  .Confirmed {
+    margin-left: 100px;
+  }
+  .auctionCreate {
+    margin-top: 150px;
+  }
 }

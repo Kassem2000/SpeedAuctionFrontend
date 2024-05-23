@@ -118,7 +118,7 @@ const Auction = () => {
   return (
     <CreateAuctionProvider>
       <HeroImage>
-        <form onSubmit={handleSubmit}>
+        <form className="formAuctionPage" onSubmit={handleSubmit}>
           <div className="auctioncontainer">
             <label className="sprice">
               <input
@@ -130,6 +130,7 @@ const Auction = () => {
             </label>
             <label className="sprice">
               <select
+                className="selectAuctionPage"
                 type="text"
                 name="year"
                 placeholder="Year"
@@ -145,6 +146,7 @@ const Auction = () => {
             </label>
             <label className="sprice">
               <select
+                className="selectAuctionPage"
                 type="text"
                 name="month"
                 placeholder="Month"
@@ -160,6 +162,7 @@ const Auction = () => {
             </label>
             <label className="sprice">
               <select
+                className="selectAuctionPage"
                 type="text"
                 name="day"
                 placeholder="Day"
