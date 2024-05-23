@@ -19,10 +19,14 @@ const HomePage = () => {
       showFilter.onclick = function () {
         const filterMobile = document.getElementById("filterMobile");
         filterMobile.style.display = "initial";
+        hideFilter.style.display = "initial";
+        showFilter.style.display = "none";
       };
       hideFilter.onclick = function () {
         const filterMobile = document.getElementById("filterMobile");
         filterMobile.style.display = "none";
+        showFilter.style.display = "initial";
+        hideFilter.style.display = "none";
       };
     } catch (err) {
       console.log("error: " + err);
