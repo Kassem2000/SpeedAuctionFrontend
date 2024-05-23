@@ -9,6 +9,7 @@
   top: 60px;
   padding: 20px;
   overflow-y: scroll;
+  line-height: 36px;
 }
 
 @media (max-width: 390px) {
