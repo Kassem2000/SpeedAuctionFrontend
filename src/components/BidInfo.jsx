@@ -18,6 +18,7 @@ const BidInfo = () => {
   return (
     <div className="bidInfo">
       <h2 className="created">Created: {displayedAuction.created_at}</h2>
+      <div className="star">&#9733;</div>
       <label className="bidLabel">
         <h2 className="box1">
           {" "}
