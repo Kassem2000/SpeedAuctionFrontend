@@ -32,7 +32,7 @@
   text-decoration: none;
 }
 
-.createAuctionButton {
+.createAuctionButton , .please_login{
   width: 220px;
   height: 55px;
   background-color: #131212;
@@ -54,14 +54,14 @@
   .heroHome {
     height: 230px;
   }
-  .createAuctionButton {
+  .createAuctionButton, .please_login {
     width: 120px;
     height: 35px;
     margin: 10px;
     margin-top: 60px;
     opacity: 100%;
   }
-  .createAuctionButton h3 {
+  .createAuctionButton h3, .please_login h3 {
     font-size: 16px;
   }
   .desktopFilter {

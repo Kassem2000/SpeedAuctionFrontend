@@ -37,11 +37,20 @@ const HomePage = () => {
     <>
       <ThumbnailProvider>
         <div className="heroHome">
-          <Link to="/auctions" className="linkCreateAuction">
-            <button className="createAuctionButton">
-              <h3>Create Auction</h3>
-            </button>
-          </Link>
+          {window.localStorage.getItem("user") ? (
+            <Link to="/auctions" className="linkCreateAuction">
+              <button className="createAuctionButton">
+                <h3>Create Auction</h3>
+              </button>
+            </Link>
+          ) : (
+            <Link to="/login" className="linkCreateAuction">
+              <button className="please_login">
+                <h3> Create Auction</h3>
+              </button>
+            </Link>
+          )}
+
           <div className="desktopFilter">
             <Filter setFilteredAuctions={updateFilteredAuctions} />
           </div>
