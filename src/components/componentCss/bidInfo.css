@@ -8,6 +8,14 @@
   margin-bottom: 20px;
 }
 
+.star {
+ position: absolute;
+ right: 20px;
+ top: 5px;
+ font-size: 50px;
+ cursor: pointer; 
+}
+
 .box1,
 .box2,
 .box3,

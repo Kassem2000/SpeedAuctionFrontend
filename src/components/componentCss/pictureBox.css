@@ -11,6 +11,8 @@
 
 @media (max-width: 390px) {
   .leftBoxUpp {
-    height: 190px;
+    height: 196px;
+    top: 0px;
+    left: 0px;
   }
 }

@@ -3,14 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
   height: auto;
-  background-color: white;
+  scale: 0.8;
 }
 
 .upperBoxes {
+  position: relative;
   display: flex;
   justify-content: center;
+  margin: 20px;
   margin-bottom: 20px;
 }
 
@@ -19,17 +20,22 @@
   position: absolute;
   width: 660px;
   height: 600px;
-  top: 100px;
-  right: 60px;
+  top: -50px;
+  left: 270px;
   border-radius: 15px;
   opacity: 0.9;
 }
 
 .leftBoxUpp {
-  aspect-ratio: 16/9;
+  justify-content: left;
+  margin-left: -950px;
+  margin-top: -150px;
+  width: 1160px;
+  border-radius: 15px;
 }
 
 .lowerBoxes {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: -350px;
@@ -38,12 +44,13 @@
 .rightBoxDown {
   background-color: #161414;
   position: absolute;
-  width: 900px;
-  height: 300px;
-  top: 720px;
-  right: 60px;
+  width: 985px;
+  height: 350px;
+  top: 570px;
+  left: -50px;
   border-radius: 10px;
   opacity: 0.9;
+  backface-visibility: hidden;
 }
 
 .description-title {
@@ -57,41 +64,68 @@
   position: absolute;
   width: 900px;
   height: 300px;
-  top: 720px;
-  left: 20px;
+  top: 560px;
+  right: 70px;
   border-radius: 10px;
 }
 
+@media (max-width: 1600px) {
+  .auctionPage {
+    scale: 0.7;
+  }
+}
+@media (max-width: 1300px) {
+  .auctionPage {
+    scale: 0.6;
+  }
+}
+@media (max-width: 1000px) {
+  .auctionPage {
+    scale: 0.5;
+  }
+}
+
 @media (max-width: 390px) {
+  .auctionPage {
+    scale: initial;
+    display: initial;
+  }
   .rightBoxUpp {
     background-color: #161414;
     position: absolute;
-    width: 340px;
+    width: 348px;
     height: 500px;
-    top: 330px;
-    right: 30px;
+    top: 270px;
+    left: 0px;
     border-radius: 15px;
     opacity: 0.9;
   }
   .rightBoxDown {
     background-color: #161414;
     position: absolute;
-    width: 340px;
+    width: 348px;
     height: 300px;
-    top: 870px;
-    right: 30px;
+    top: 770px;
+    left: 20px;
     border-radius: 10px;
     opacity: 0.9;
   }
   .leftBoxDown {
     position: absolute;
-    width: 340px;
+    width: 380px;
     height: 300px;
-    top: 1200px;
-    left: 20px;
+    top: 1080px;
+    right: 20px;
     border-radius: 10px;
   }
   .description-title {
     display: none;
+  }
+  .leftBoxUpp {
+    scale: 1;
+    aspect-ratio: 16/9;
+    margin-left: 0px;
+    width: auto;
+    margin-top: 50px;
   }
 }
