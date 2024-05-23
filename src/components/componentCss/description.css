@@ -3,12 +3,13 @@
   color: white;
   position: absolute;
   justify-content: center;
-  width: 830px;
-  height: 200px;
-  right: 30px;
+  width: 950px;
+  height: 250px;
+  right: 20px;
   top: 60px;
   padding: 20px;
   overflow-y: scroll;
+  line-height: 36px;
 }
 
 @media (max-width: 390px) {
