@@ -1,4 +1,4 @@
-To connect with bacckend: https://github.com/andronisdre/SpeedAuctionBackend
+To connect with backend: https://github.com/andronisdre/SpeedAuctionBackend
 
 # React + Vite
 
