@@ -5,7 +5,8 @@
 ## React + Vite
 
 
-HeaaltCare Ab:
+HealhtCare AB
+
 Backend: https://github.com/hejhejsanne/LOPM-Server
 Frontens: https://github.com/hejhejsanne/LOPM-Client
 
